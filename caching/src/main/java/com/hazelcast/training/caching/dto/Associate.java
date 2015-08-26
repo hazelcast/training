@@ -49,4 +49,11 @@ public class Associate implements Serializable {
     public void setCompany(Company company) {
         this.company = company;
     }
+
+    @Override
+    public String toString() {
+        return "Associate{" +
+                "Name='" + associateName + '\'' +
+                '}';
+    }
 }
