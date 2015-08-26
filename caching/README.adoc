@@ -26,4 +26,26 @@ This document contains instruction of Hazelcast for Caching training example app
 
 toc::[]
 
+== How to build
 
+----
+./gradlew clean build
+----
+
+== Import to IDE
+
+=== IntelliJ IDEA
+
+File -> Open -> `build.gradle`
+
+=== Eclipse
+
+. Run command
++
+
+----
+./gradlew clean eclipse #<1>
+----
+<1> generates Eclipse `.project` and `.classpath`
+
+. Import existing project to Eclipse
