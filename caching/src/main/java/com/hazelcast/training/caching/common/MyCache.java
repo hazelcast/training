@@ -7,7 +7,7 @@ package com.hazelcast.training.caching.common;
  *         Twitter: @gamussa
  * @since 0.0.1
  */
-public interface ICache<K, V> {
+public interface MyCache<K, V> {
     void put(K key, V value);
 
     V get(K key);

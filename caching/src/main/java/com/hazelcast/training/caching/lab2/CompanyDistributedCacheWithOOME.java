@@ -5,7 +5,7 @@ import com.hazelcast.config.XmlConfigBuilder;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import com.hazelcast.training.caching.common.ICache;
+import com.hazelcast.training.caching.common.MyCache;
 import com.hazelcast.training.caching.dto.Associate;
 import com.hazelcast.training.caching.dto.Company;
 
@@ -53,7 +53,7 @@ public class CompanyDistributedCacheWithOOME {
 }
 
 
-class DistributedMapCache<Integer, Company> implements ICache<Integer, Company> {
+class DistributedMapCache<Integer, Company> implements MyCache<Integer, Company> {
     private final HazelcastInstance hazelcastInstance;
     private final IMap<Integer, Company> companiesMaps;
 
