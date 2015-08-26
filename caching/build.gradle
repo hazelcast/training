@@ -1,0 +1,58 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'groovy'
+
+group = 'com.hazelcast.training'
+version = '1.0-SNAPSHOT'
+
+description = """
+"""
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    jcenter()
+
+    // Hazelcast snapshots repository
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+
+    // Hazelcast Enterprise jars repository
+    maven {
+        url 'https://repository-hazelcast-l337.forge.cloudbees.com/release/'
+    }
+}
+
+dependencies {
+    compile "com.hazelcast:hazelcast:$HZ_VERSION"
+    compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
+    // compile "com.hazelcast:hazelcast-enterprise:$HZ_VERSION"
+    compile "javax.cache:cache-api:1.0.0"
+
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.12'
+
+    // lab 3 dependencies
+        compile "org.hsqldb:hsqldb:2.2.9"
+        compile 'com.google.guava:guava:18.0'
+    // end of lab 3 dependencies
+
+    // Hazelcast support for testing
+    testCompile "com.hazelcast:hazelcast:$HZ_VERSION:tests"
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+task collectJars(type: Copy) {
+    into "$buildDir/deps/lib"
+    from configurations.testRuntime
+}
