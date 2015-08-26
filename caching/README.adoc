@@ -49,3 +49,32 @@ File -> Open -> `build.gradle`
 <1> generates Eclipse `.project` and `.classpath`
 
 . Import existing project to Eclipse
+
+== How to run labs from command line
+
+=== Lab1
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyHashMapCache   <1>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyConcurrentMapCache <2>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyDistributedCache   <3>
+----
+<1> simple cache implementation based on `HashMap`
+<2> thread safe cache version based on `ConcurrentHashMap`
+<3> distributed cache version based on Hazelcast IMap
+
+=== Lab 2
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab2.CompanyDistributedCacheWithOOME
+----
+
+
+=== Lab 3
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab3.CompanyDistributedCacheWithPersistence <1>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab3.CompanyCacheWithPersistenceReader <2>
+----
+<1> Writer member
+<2> Reader member

@@ -35,8 +35,8 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'
 
     // lab 3 dependencies
-        compile "org.hsqldb:hsqldb:2.2.9"
-        compile 'com.google.guava:guava:18.0'
+    compile "org.hsqldb:hsqldb:2.2.9"
+    compile 'com.google.guava:guava:18.0'
     // end of lab 3 dependencies
 
     // Hazelcast support for testing
@@ -53,6 +53,14 @@ idea {
 }
 
 task collectJars(type: Copy) {
-    into "$buildDir/deps/lib"
+    into "$rootDir/lib"
     from configurations.testRuntime
 }
+
+task(execute)<< {
+    javaexec() {
+        main = mainClass
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
+
