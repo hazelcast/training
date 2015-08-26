@@ -6,6 +6,7 @@
 
     <map name="company">
         <map-store enabled="true">
+            <!--<map-store enabled="true" initial-mode="EAGER">-->
             <class-name>com.hazelcast.training.caching.lab3.jdbc.CompanyMapStore</class-name>
         </map-store>
     </map>

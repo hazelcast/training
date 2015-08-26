@@ -39,7 +39,7 @@ public class CompanyDistributedCacheWithPersistence {
 
         System.out.println("Companies count: " + companyCache.size());
 
-        companyCache.getCompaniesMaps().evict(1);
+        companyCache.getCompaniesMap().evict(1);
         System.out.println("Companies count after eviction: " + companyCache.size());
 
         // read through cache
@@ -53,30 +53,30 @@ public class CompanyDistributedCacheWithPersistence {
 
 class DistributedMapCache<Integer, Company> implements ICache<Integer, Company> {
     private final HazelcastInstance hazelcastInstance;
-    private final IMap<Integer, Company> companiesMaps;
+    private final IMap<Integer, Company> companiesMap;
 
-    public IMap<Integer, Company> getCompaniesMaps() {
-        return companiesMaps;
+    public IMap<Integer, Company> getCompaniesMap() {
+        return companiesMap;
     }
 
     public DistributedMapCache(HazelcastInstance hazelcastInstance) {
         this.hazelcastInstance = hazelcastInstance;
-        this.companiesMaps = hazelcastInstance.getMap(IMAP_NAME);
+        this.companiesMap = hazelcastInstance.getMap(IMAP_NAME);
     }
 
     @Override public void put(Integer key, Company value) {
-        companiesMaps.set(key, value);
+        companiesMap.set(key, value);
     }
 
     @Override public Company get(Integer key) {
-        return companiesMaps.get(key);
+        return companiesMap.get(key);
     }
 
     public Company putIfAbsent(Integer key, Company value) {
-        return companiesMaps.putIfAbsent(key, value);
+        return companiesMap.putIfAbsent(key, value);
     }
 
     @Override public long size() {
-        return companiesMaps.size();
+        return companiesMap.size();
     }
 }

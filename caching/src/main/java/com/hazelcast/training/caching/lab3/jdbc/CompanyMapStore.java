@@ -19,10 +19,13 @@ public class CompanyMapStore implements MapStore<Integer, Company> {
 
     public CompanyMapStore() {
         try {
-            con = DriverManager.getConnection("jdbc:hsqldb:mydatabase", "SA", "");
+            //
+            //con = DriverManager.getConnection("jdbc:hsqldb:file:/tmp/hazelcastdb", "SA", "");
+
+            con = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost:9002/hazelcastdb", "sa", "");
             con.createStatement().executeUpdate(
-                    "create table if not exists person (id bigint not null, name varchar(45), primary key (id))");
-            allKeysStatement = con.prepareStatement("select id from person");
+                    "create table if not exists company (id int not null, name varchar(45), primary key (id))");
+            allKeysStatement = con.prepareStatement("select id from company");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +35,7 @@ public class CompanyMapStore implements MapStore<Integer, Company> {
         System.out.println("Delete:" + key);
         try {
             con.createStatement().executeUpdate(
-                    format("delete from person where id = %s", key));
+                    format("delete from company where id = %s", key));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -41,7 +44,7 @@ public class CompanyMapStore implements MapStore<Integer, Company> {
     public synchronized void store(Integer key, Company value) {
         try {
             con.createStatement().executeUpdate(
-                    format("insert into person values(%s,'%s')", key, value.getCompanyName()));
+                    format("insert into company values(%s,'%s')", key, value.getCompanyName()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -59,11 +62,11 @@ public class CompanyMapStore implements MapStore<Integer, Company> {
     public synchronized Company load(Integer key) {
         try {
             ResultSet resultSet = con.createStatement().executeQuery(
-                    format("select name from person where id =%s", key));
+                    format("select name from company where id =%s", key));
             try {
                 if (!resultSet.next()) return null;
                 String name = resultSet.getString(1);
-                return new Company(key.intValue(), name);
+                return new Company(key, name);
             } finally {
                 resultSet.close();
             }
