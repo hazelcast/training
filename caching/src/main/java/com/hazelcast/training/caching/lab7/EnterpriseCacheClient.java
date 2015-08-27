@@ -8,7 +8,6 @@ import com.hazelcast.client.config.XmlClientConfigBuilder;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.logging.ILogger;
 import com.hazelcast.logging.Logger;
-import com.hazelcast.memory.NativeOutOfMemoryError;
 import org.HdrHistogram.AbstractHistogram;
 import org.HdrHistogram.AtomicHistogram;
 import org.HdrHistogram.Histogram;
@@ -161,11 +160,11 @@ public class EnterpriseCacheClient {
                                 cache.get(key);
                                 stats.gets.incrementAndGet();
                             } else if (operation < getPercentage + putPercentage) {
-                                try {
-                                    cache.put(key, vv[rand.nextInt(vv.length)]);
+                                cache.put(key, vv[rand.nextInt(vv.length)]);
+                                /*try {
                                 } catch (NativeOutOfMemoryError e) {
                                     System.err.println(e.getMessage());
-                                }
+                                }*/
                                 stats.puts.incrementAndGet();
                             } else {
                                 cache.remove(key);
