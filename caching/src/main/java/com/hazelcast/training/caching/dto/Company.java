@@ -9,8 +9,16 @@ public class Company implements Serializable, Cloneable {
     private Integer id;
     private String companyName;
     private List<Associate> associates;
+    private Integer associateNum;
+    private boolean active;
 
     public Company() {
+    }
+
+    public Company(String companyName, boolean active, Integer associateNum) {
+        this.companyName = companyName;
+        this.active = active;
+        this.associateNum = associateNum;
     }
 
     public Company(String companyName) {
@@ -48,10 +56,31 @@ public class Company implements Serializable, Cloneable {
 
     @Override public String toString() {
         final StringBuilder sb = new StringBuilder("Company{");
-        sb.append("id=").append(id);
-        sb.append(", companyName='").append(companyName).append('\'');
-        sb.append(", associates=").append(associates);
+        if (id != null) {
+            sb.append("id=").append(id);
+            sb.append(", ");
+        }
+        sb.append("companyName='").append(companyName).append('\'');
+        if (associates != null) {
+            sb.append(", associates=").append(associates);
+        }
         sb.append('}');
         return sb.toString();
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public Integer getAssociateNum() {
+        return associateNum;
+    }
+
+    public void setAssociateNum(Integer associateNum) {
+        this.associateNum = associateNum;
     }
 }
