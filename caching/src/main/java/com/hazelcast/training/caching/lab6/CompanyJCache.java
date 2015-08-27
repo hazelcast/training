@@ -55,14 +55,14 @@ public class CompanyJCache {
                 .setTypes(Integer.class, Company.class);
 
         // Create the cache
-        Cache<Integer, Company> companies = manager.createCache("company", cacheConfig);
+        Cache<Integer, Company> companyCache = manager.createCache("company", cacheConfig);
 
         // Create entry listener configuration
         CacheEntryListenerConfiguration listenerConfiguration =
             new MutableCacheEntryListenerConfiguration<Integer, Company>(
                 new MyEntryListenerFactory(), null, true, true);
 
-        companies.registerCacheEntryListener(listenerConfiguration);
+        companyCache.registerCacheEntryListener(listenerConfiguration);
 
         hazelcastAssociates.add(new Associate("Fuad Malikov"));
         hazelcastAssociates.add(new Associate("Talip Ozturk"));
@@ -70,17 +70,17 @@ public class CompanyJCache {
 
         Company hazelcast = new Company("Hazelcast");
         hazelcast.setAssociates(hazelcastAssociates);
-        companies.put(1, hazelcast);
+        companyCache.put(1, hazelcast);
 
         abcxyz.add(new Associate("Larry Page"));
         abcxyz.add(new Associate("Sergey Brin"));
 
         Company google = new Company("Google");
         google.setAssociates(abcxyz);
-        companies.put(2, google);
+        companyCache.put(2, google);
 
         // execute EntryProcessor
-        companies.invoke(2, new EntryProcessor<Integer, Company, Object>() {
+        companyCache.invoke(2, new EntryProcessor<Integer, Company, Object>() {
             @Override
             public Object process(MutableEntry<Integer, Company> entry, Object... arguments)
                 throws EntryProcessorException {
@@ -93,8 +93,8 @@ public class CompanyJCache {
             }
         });
 
-        System.out.println("Got Google? " + companies.get(2));
-        final ICache iCache = companies.unwrap(ICache.class);
+        System.out.println("Got Google? " + companyCache.get(2));
+        final ICache iCache = companyCache.unwrap(ICache.class);
 
         //
         System.out.println("Companies count: " + iCache.size());
