@@ -21,8 +21,10 @@ public class CompanyDistributedCacheWithOOME {
     public static void main(String[] args) throws FileNotFoundException {
         Config config = loadConfig("hazelcast-lab2.xml");
         final HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(config);
+
         final DistributedCache<Integer, Company> companyCache =
                 new DistributedCache<>(hazelcastInstance);
+
         Runtime runtime = Runtime.getRuntime();
         int counter = 0;
         while (true) {
@@ -33,6 +35,7 @@ public class CompanyDistributedCacheWithOOME {
             System.out.printf("Unique Puts = %s keyCount : Free Memory (MB) = %s\n", counter,
                     runtime.freeMemory() / 1024 * 1024);
         }
+
     }
 
     private static Config loadConfig(String configFileName) {

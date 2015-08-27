@@ -17,7 +17,7 @@
 
 package com.hazelcast.training.caching.lab1;
 
-import com.hazelcast.training.caching.common.MyCache;
+import com.hazelcast.training.caching.common.cache.MyCache;
 import com.hazelcast.training.caching.dto.Associate;
 import com.hazelcast.training.caching.dto.Company;
 

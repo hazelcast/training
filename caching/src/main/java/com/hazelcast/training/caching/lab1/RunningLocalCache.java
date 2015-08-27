@@ -1,6 +1,7 @@
 package com.hazelcast.training.caching.lab1;
 
-import com.hazelcast.training.caching.common.MyCache;
+import com.hazelcast.training.caching.common.cache.LocalCache;
+import com.hazelcast.training.caching.common.cache.MyCache;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -20,6 +21,7 @@ public class RunningLocalCache {
 
     static class LocalCache<Integer, Company> implements MyCache<Integer, Company> {
         ConcurrentMap<Integer, Company> storage = new ConcurrentHashMap<>();
+
 
         @Override
         public void put(Integer key, Company value) {
@@ -41,4 +43,3 @@ public class RunningLocalCache {
         }
     }
 }
-

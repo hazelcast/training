@@ -28,6 +28,7 @@ repositories {
 dependencies {
     compile "com.hazelcast:hazelcast:$HZ_VERSION"
     compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
+    // Required for Lab 7
     // compile "com.hazelcast:hazelcast-enterprise:$HZ_VERSION"
     compile "javax.cache:cache-api:1.0.0"
 
@@ -38,6 +39,10 @@ dependencies {
     compile "org.hsqldb:hsqldb:2.2.9"
     compile 'com.google.guava:guava:18.0'
     // end of lab 3 dependencies
+
+    // lab 7 dependencies
+    compile "org.hdrhistogram:HdrHistogram:1.2.1"
+    // end of lab 7 dependencies
 
     // Hazelcast support for testing
     testCompile "com.hazelcast:hazelcast:$HZ_VERSION:tests"
