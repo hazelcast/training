@@ -1,4 +1,4 @@
-package com.hazelcast.training.caching.common;
+package com.hazelcast.training.caching.common.cache;
 
 /**
  * TODO
