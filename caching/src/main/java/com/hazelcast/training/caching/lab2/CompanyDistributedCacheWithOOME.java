@@ -4,17 +4,11 @@ import com.hazelcast.config.Config;
 import com.hazelcast.config.XmlConfigBuilder;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IMap;
-import com.hazelcast.training.caching.common.MyCache;
-import com.hazelcast.training.caching.dto.Associate;
 import com.hazelcast.training.caching.dto.Company;
+import com.hazelcast.training.caching.lab1.RunningDistributedCache.DistributedCache;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.hazelcast.training.caching.common.LabConstants.IMAP_NAME;
 
 /**
  * TODO
@@ -25,56 +19,25 @@ import static com.hazelcast.training.caching.common.LabConstants.IMAP_NAME;
  */
 public class CompanyDistributedCacheWithOOME {
     public static void main(String[] args) throws FileNotFoundException {
-        final InputStream configInputStream = CompanyDistributedCacheWithOOME.class.getClassLoader()
-            .getResourceAsStream("hazelcast-lab2.xml");
-        Config config = new XmlConfigBuilder(configInputStream).build();
+        Config config = loadConfig("hazelcast-lab2.xml");
         final HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(config);
-        // Hazelcast.newHazelcastInstance();
-        List<Associate> hazelcastAssociates = new ArrayList<>();
-        List<Associate> abcxyzAssociates = new ArrayList<>();
-
-        final DistributedMapCache<Integer, Company> companyCache =
-            new DistributedMapCache<>(hazelcastInstance);
-
-        String companyName = new String(new char[1000000]); // 2 MB
+        final DistributedCache<Integer, Company> companyCache =
+                new DistributedCache<>(hazelcastInstance);
         Runtime runtime = Runtime.getRuntime();
-
-        int keyCount = 0;
-        int mb = 1024 * 1024;
-
+        int counter = 0;
         while (true) {
-            companyCache.put(keyCount, new Company(companyName));
-            keyCount++;
-            System.out.printf("Unique Puts = %s keyCount : Free Memory (MB) = %s\n", keyCount,
-                runtime.freeMemory() / mb);
+            Company company = new Company("Company_" + counter);
+            company.setPayload(new byte[2_000_000]);
+            companyCache.put(counter, company);
+            counter++;
+            System.out.printf("Unique Puts = %s keyCount : Free Memory (MB) = %s\n", counter,
+                    runtime.freeMemory() / 1024 * 1024);
         }
-
-    }
-}
-
-
-class DistributedMapCache<Integer, Company> implements MyCache<Integer, Company> {
-    private final HazelcastInstance hazelcastInstance;
-    private final IMap<Integer, Company> companiesMaps;
-
-    public DistributedMapCache(HazelcastInstance hazelcastInstance) {
-        this.hazelcastInstance = hazelcastInstance;
-        this.companiesMaps = hazelcastInstance.getMap(IMAP_NAME);
     }
 
-    @Override public void put(Integer key, Company value) {
-        companiesMaps.set(key, value);
-    }
-
-    @Override public Company get(Integer key) {
-        return companiesMaps.get(key);
-    }
-
-    public Company putIfAbsent(Integer key, Company value) {
-        return companiesMaps.putIfAbsent(key, value);
-    }
-
-    @Override public long size() {
-        return companiesMaps.size();
+    private static Config loadConfig(String configFileName) {
+        final InputStream configInputStream = CompanyDistributedCacheWithOOME.class.getClassLoader()
+                .getResourceAsStream(configFileName);
+        return new XmlConfigBuilder(configInputStream).build();
     }
 }

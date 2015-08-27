@@ -9,6 +9,7 @@ public class Company implements Serializable, Cloneable {
     private Integer id;
     private String companyName;
     private List<Associate> associates;
+    private byte[] payload;
 
     public Company() {
     }
@@ -44,6 +45,14 @@ public class Company implements Serializable, Cloneable {
 
     public void setAssociates(List<Associate> associates) {
         this.associates = associates;
+    }
+
+    public byte[] getPayload() {
+        return payload;
+    }
+
+    public void setPayload(byte[] payload) {
+        this.payload = payload;
     }
 
     @Override public String toString() {

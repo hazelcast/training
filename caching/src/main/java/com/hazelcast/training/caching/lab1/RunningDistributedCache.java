@@ -20,33 +20,33 @@ public class RunningDistributedCache {
         Application application = new Application(new DistributedCache<>(hazelcast));
         application.run();
     }
-}
 
-class DistributedCache<Integer, Company> implements MyCache<Integer, Company> {
-    private final HazelcastInstance hazelcastInstance;
-    private final IMap<Integer, Company> companiesMaps;
+    public static class DistributedCache<Integer, Company> implements MyCache<Integer, Company> {
+        private final HazelcastInstance hazelcastInstance;
+        private final IMap<Integer, Company> companiesMaps;
 
-    public DistributedCache(HazelcastInstance hazelcastInstance) {
-        this.hazelcastInstance = hazelcastInstance;
-        this.companiesMaps = hazelcastInstance.getMap(IMAP_NAME);
-    }
+        public DistributedCache(HazelcastInstance hazelcastInstance) {
+            this.hazelcastInstance = hazelcastInstance;
+            this.companiesMaps = hazelcastInstance.getMap(IMAP_NAME);
+        }
 
-    @Override
-    public void put(Integer key, Company value) {
-        companiesMaps.set(key, value);
-    }
+        @Override
+        public void put(Integer key, Company value) {
+            companiesMaps.set(key, value);
+        }
 
-    @Override
-    public Company get(Integer key) {
-        return companiesMaps.get(key);
-    }
+        @Override
+        public Company get(Integer key) {
+            return companiesMaps.get(key);
+        }
 
-    public Company putIfAbsent(Integer key, Company value) {
-        return companiesMaps.putIfAbsent(key, value);
-    }
+        public Company putIfAbsent(Integer key, Company value) {
+            return companiesMaps.putIfAbsent(key, value);
+        }
 
-    @Override
-    public long size() {
-        return companiesMaps.size();
+        @Override
+        public long size() {
+            return companiesMaps.size();
+        }
     }
 }
