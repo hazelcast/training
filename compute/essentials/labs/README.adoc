@@ -1,0 +1,53 @@
+= Hazelcast Essentials Labs
+Viktor Gamov <viktor@hazelcast.com>, © 2015 Hazelcast, Inc.
+2015-07-13
+:revdate: 2015-07-13 15:56:04 -0600
+:linkattrs:
+:ast: &ast;
+:y: &#10003;
+:n: &#10008;
+:y: icon:check-sign[role="green"]
+:n: icon:check-minus[role="red"]
+:c: icon:file-text-alt[role="blue"]
+:toc: auto
+:toc-placement: auto
+:toc-position: right
+:toc-title: Table of content
+:toclevels: 3
+:idprefix:
+:idseparator: -
+:sectanchors:
+:icons: font
+:source-highlighter: highlight.js
+:highlightjs-theme: idea
+:experimental:
+
+Hazelcast Essential
+
+toc::[]
+
+
+== How to build
+
+----
+./gradlew clean build
+----
+
+== Import to IDE
+
+=== IntelliJ IDEA
+
+File -> Open -> `build.gradle`
+
+=== Eclipse
+
+. Run command
++
+
+----
+./gradlew clean eclipse #<1>
+----
+<1> generates Eclipse `.project` and `.classpath`
+
+. Import existing project to Eclipse
+

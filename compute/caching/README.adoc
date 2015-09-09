@@ -1,0 +1,80 @@
+= Hazelcast For Caching
+Viktor Gamov <viktor@hazelcast.com>, © 2015 Hazelcast, Inc.
+2015-08-22
+:revdate: 2015-08-22 18:42:41 -0600
+:linkattrs:
+:ast: &ast;
+:y: &#10003;
+:n: &#10008;
+:y: icon:check-sign[role="green"]
+:n: icon:check-minus[role="red"]
+:c: icon:file-text-alt[role="blue"]
+:toc: auto
+:toc-placement: auto
+:toc-position: right
+:toc-title: Table of content
+:toclevels: 3
+:idprefix:
+:idseparator: -
+:sectanchors:
+:icons: font
+:source-highlighter: highlight.js
+:highlightjs-theme: idea
+:experimental:
+
+This document contains instruction of Hazelcast for Caching training example application
+
+toc::[]
+
+== How to build
+
+----
+./gradlew clean build
+----
+
+== Import to IDE
+
+=== IntelliJ IDEA
+
+File -> Open -> `build.gradle`
+
+=== Eclipse
+
+. Run command
++
+
+----
+./gradlew clean eclipse #<1>
+----
+<1> generates Eclipse `.project` and `.classpath`
+
+. Import existing project to Eclipse
+
+== How to run labs from command line
+
+=== Lab1
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyHashMapCache   <1>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyConcurrentMapCache <2>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab1.CompanyDistributedCache   <3>
+----
+<1> simple cache implementation based on `HashMap`
+<2> thread safe cache version based on `ConcurrentHashMap`
+<3> distributed cache version based on Hazelcast IMap
+
+=== Lab 2
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab2.CompanyDistributedCacheWithOOME
+----
+
+
+=== Lab 3
+
+----
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab3.CompanyDistributedCacheWithPersistence <1>
+./gradlew execute -PmainClass=com.hazelcast.training.caching.lab3.CompanyCacheWithPersistenceReader <2>
+----
+<1> Writer member
+<2> Reader member

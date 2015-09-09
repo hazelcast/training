@@ -1,0 +1,157 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    group = 'com.hazelcast.techops.training'
+    version = '0.0.1'
+
+    idea {
+        /*project {
+            jdkName = '1.7'
+            languageLevel = '1.7'
+        }*/
+        module {
+            downloadSources = true
+            downloadJavadoc = true
+        }
+    }
+
+    task makeDirs(description: 'make all dirs for project setup') << {
+        def sources = [sourceSets.main, sourceSets.test]
+        sources*.allSource*.srcDirs.flatten().each { File srcDir ->
+            println "making $srcDir"
+            srcDir.mkdirs()
+        }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        jcenter()
+
+        // Hazelcast snapshots repository
+        maven {
+            url = "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+    }
+
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives sourcesJar, javadocJar
+    }
+
+    dependencies {
+        compile "com.hazelcast:hazelcast:$HZ_VERSION"
+        compile "com.hazelcast:hazelcast-client:$HZ_VERSION"
+
+    }
+}
+
+project(':lab1') {
+    description = 'Hazelcast Configuration'
+
+    task startXMLMain(type: JavaExec, group: 'lab') {
+        main = 'XMLMain'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+    task startProgrammaticMain(type: JavaExec, group: 'lab') {
+        main = 'ProgrammaticMain'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
+
+project(':lab2') {
+    description = "Map Eviction"
+
+    task startMember(type: JavaExec, group: 'lab') {
+        jvmArgs = ["-Xms128M", "-Xmx256M"]
+        main = 'Main'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    task startEvictAll(type: JavaExec, group: 'lab') {
+        main = 'EvictAll'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+}
+
+project(':lab3') {
+    description = 'MapLoader and MapStore'
+
+    dependencies {
+        compile "org.hsqldb:hsqldb:2.2.9"
+        compile "org.hibernate:hibernate-core:4.3.7.Final"
+        compile 'com.google.guava:guava:18.0'
+    }
+
+    task startLoadAll(type: JavaExec, group: 'lab') {
+        main = 'LoadAll'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
+
+project(':lab4') {
+    description = 'Criteria API'
+
+    task startPredicatemember(type: JavaExec, group: 'lab') {
+        main = 'PredicateMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
+
+project(':lab5') {
+    description = 'Indexes'
+
+    task startIndexBenchmark(type: JavaExec, group: 'lab') {
+        main = 'IndexBenchmark'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    task startAdditionalMember(type: JavaExec, group: 'lab') {
+        main = 'AdditionalMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+}
+
+project(':lab6') {
+    description = 'Bounded Blocking Queue'
+
+    task startConsumer(type: JavaExec, group: 'lab') {
+        main = 'ConsumerMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    task startProducer(type: JavaExec, group: 'lab') {
+        main = 'ProducerMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
+
+project(':lab7') {
+    description = 'Locking'
+
+    task startRaceFreeMember(type: JavaExec, group: 'lab') {
+        main = 'RaceFreeMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    task startRacyMember(type: JavaExec, group: 'lab') {
+        main = 'RacyMember'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}
