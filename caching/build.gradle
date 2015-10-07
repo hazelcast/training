@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'groovy'
+apply plugin: 'eclipse'
 
 group = 'com.hazelcast.training'
 version = '1.0-SNAPSHOT'
