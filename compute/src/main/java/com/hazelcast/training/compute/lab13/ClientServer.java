@@ -7,6 +7,7 @@ import com.hazelcast.config.QueryCacheConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
+import com.hazelcast.core.IEnterpriseMap;
 import com.hazelcast.map.QueryCache;
 import com.hazelcast.query.Predicate;
 
