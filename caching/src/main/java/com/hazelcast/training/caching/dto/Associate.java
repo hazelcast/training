@@ -11,13 +11,6 @@ public class Associate implements Serializable {
     private Integer companyId;
     private Company company;
 
-    @Override public String toString() {
-        final StringBuilder sb = new StringBuilder("Associate{");
-        sb.append("associateName='").append(associateName).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
-
     public Associate() {
     }
 
