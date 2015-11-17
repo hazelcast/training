@@ -8,6 +8,9 @@
         <map-store enabled="true">
             <!--<map-store enabled="true" initial-mode="EAGER">-->
             <class-name>com.hazelcast.training.caching.lab3.jdbc.CompanyMapStore</class-name>
+            <properties>
+                <property name="dburl">jdbc:hsqldb:hsql://localhost:9002/hazelcastdb</property>
+            </properties>
         </map-store>
     </map>
 
