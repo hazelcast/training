@@ -32,8 +32,8 @@ public class CompanyDistributedCacheWithOOME {
             company.setPayload(new byte[2_000_000]);
             companyCache.put(counter, company);
             counter++;
-            System.out.printf("Unique Puts = %s keyCount : Free Memory (MB) = %s\n", counter,
-                    runtime.freeMemory() / 1024 * 1024);
+            System.out.printf("Unique Puts = %s keyCount : Free Memory = %s MB\n", counter,
+                (runtime.freeMemory() / (1024 * 1024)));
         }
 
     }
