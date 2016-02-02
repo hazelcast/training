@@ -38,7 +38,7 @@ public class CompanyPredicates {
             System.out.println(person);
         }
 
-        System.out.println("Find company Nike and associates number 36");
+        System.out.println("Find company Nike and associates number 35");
         for (Company person : getWithCompanyNameAndAssociatesNum("Nike", 35)) {
             System.out.println(person);
         }
