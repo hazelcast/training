@@ -1,10 +1,7 @@
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import com.hazelcast.query.EntryObject;
-import com.hazelcast.query.Predicate;
-import com.hazelcast.query.PredicateBuilder;
-import com.hazelcast.query.Predicates;
+import com.hazelcast.query.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -49,8 +46,8 @@ public class PredicateMember {
             System.out.println(person);
         }
 
-        System.out.println("Find name Peter and age 37");
-        for (Person person : getWithNameAndAge("Peter", 37)) {
+        System.out.println("Find name Peter or age 60");
+        for (Person person : getWithNameOrAge("Peter", 60)) {
             System.out.println(person);
         }
     }
