@@ -8,10 +8,7 @@ import com.hazelcast.training.caching.dto.Company;
 import javax.cache.Cache;
 import javax.cache.CacheManager;
 import javax.cache.Caching;
-import javax.cache.configuration.CacheEntryListenerConfiguration;
-import javax.cache.configuration.Factory;
-import javax.cache.configuration.MutableCacheEntryListenerConfiguration;
-import javax.cache.configuration.MutableConfiguration;
+import javax.cache.configuration.*;
 import javax.cache.event.CacheEntryEventFilter;
 import javax.cache.processor.EntryProcessor;
 import javax.cache.processor.EntryProcessorException;
@@ -39,8 +36,9 @@ public class CompanyJCache {
         List<Associate> hazelcastAssociates = new ArrayList<>();
         List<Associate> abcxyz = new ArrayList<>();
 
+        System.setProperty("hazelcast.jcache.provider.type", "server");
         CachingProvider cachingProvider =
-            Caching.getCachingProvider("com.hazelcast.cache.impl.HazelcastServerCachingProvider");
+            Caching.getCachingProvider(CACHING_PROVIDER_HAZELCAST);
 
         for (CachingProvider provider : Caching.getCachingProviders()) {
             System.out.println("Caching provide" + provider);
@@ -50,7 +48,7 @@ public class CompanyJCache {
         CacheManager manager = cachingProvider.getCacheManager();
 
         // Define a cache
-        MutableConfiguration<Integer, Company> cacheConfig =
+        Configuration<Integer, Company> cacheConfig =
             new MutableConfiguration<Integer, Company>().setStoreByValue(true)
                 .setTypes(Integer.class, Company.class);
 
