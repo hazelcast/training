@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.7.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <queue name="default">
+		<backup-count>0</backup-count>
+    </queue>
+    
+    <map name="mapWithBackup">
+        <backup-count>1</backup-count>
+    </map>
+
+    <map name="mapWithoutBackup">
+        <backup-count>0</backup-count>
+    </map>
+
+</hazelcast>

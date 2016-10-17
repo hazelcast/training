@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:org/springframework/beans/factory/xml/spring-beans-4.3.xsd
+					      http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	<cache:annotation-driven/>
+
+	<bean id="fibonacci" class="com.hazelcast.techops.training.bootcamp.Fibonacci"/>
+
+	<bean id="times" class="com.hazelcast.techops.training.bootcamp.Times"/>
+ 
+</beans>
