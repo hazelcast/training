@@ -2,7 +2,6 @@
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-
 import data.Person;
 
 public class WriteMember {
