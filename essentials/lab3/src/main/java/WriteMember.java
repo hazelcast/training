@@ -9,6 +9,6 @@ public class WriteMember {
         HazelcastInstance hz = Hazelcast.newHazelcastInstance();
         IMap<Long, Person> personMap = hz.getMap("personMap");
         personMap.put(1L, new Person(1L, "Peter"));
-        //hz.shutdown();
+        hz.shutdown();
     }
 }

@@ -1,6 +1,8 @@
 package jdbc;
 
 import com.google.common.collect.Sets;
+import com.hazelcast.core.HazelcastInstance;
+import com.hazelcast.core.MapLoaderLifecycleSupport;
 import com.hazelcast.core.MapStore;
 
 import java.sql.Connection;
@@ -8,29 +10,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static java.lang.String.format;
 
 import data.Person;
 
-public class PersonMapStore implements MapStore<Long, Person> {
+public class PersonMapStore implements MapStore<Long, Person>, MapLoaderLifecycleSupport {
 
-    private final Connection con;
+    private Connection con;
     private PreparedStatement allKeysStatement;
 
     public PersonMapStore() {
-        try {
-            con = DriverManager.getConnection("jdbc:hsqldb:mydatabase", "SA", "");
-            con.createStatement().executeUpdate(
-                    "create table if not exists person (id bigint not null, name varchar(45), primary key (id))");
-            allKeysStatement = con.prepareStatement("select id from person");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     public synchronized void delete(Long key) {
@@ -88,4 +80,26 @@ public class PersonMapStore implements MapStore<Long, Person> {
         return Sets.newHashSet(keys);
     }
 
+    @Override
+    public void init(HazelcastInstance hazelcastInstance, Properties properties, String mapName) {
+        try {
+            con = DriverManager.getConnection("jdbc:hsqldb:file:testdb", "SA", "");
+            con.createStatement().executeUpdate(
+                    "create table if not exists person (id bigint not null, name varchar(45), primary key (id))");
+            allKeysStatement = con.prepareStatement("select id from person");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    @Override
+    public void destroy() {
+        try {
+            con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

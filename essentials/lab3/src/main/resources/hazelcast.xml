@@ -4,7 +4,7 @@
            xmlns="http://www.hazelcast.com/schema/config">
 
     <map name="personMap">
-        <map-store enabled="false" initial-mode="EAGER">
+        <map-store enabled="true" initial-mode="EAGER">
             <class-name>jdbc.PersonMapStore</class-name>
         </map-store>
     </map>
