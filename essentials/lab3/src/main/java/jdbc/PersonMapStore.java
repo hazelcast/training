@@ -1,4 +1,5 @@
 package jdbc;
+
 import com.google.common.collect.Sets;
 import com.hazelcast.core.MapStore;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static java.lang.String.format;
+
 import data.Person;
 
 public class PersonMapStore implements MapStore<Long, Person> {
