@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.1.RELEASE</version>
+		<version>1.5.1.RELEASE</version>
 	</parent>
 	
 	<groupId>com.hazelcast.techops.training.bootcamp</groupId>
@@ -13,10 +13,12 @@
 	<packaging>pom</packaging>
   
 	<properties>
-		<hazelcast.version>3.7.2</hazelcast.version>
-		<hazelcast-spring.version>3.7.2</hazelcast-spring.version>
+		<hazelcast.version>3.8</hazelcast.version>
+		<hazelcast-spring.version>3.8</hazelcast-spring.version>
 		<java.version>1.8</java.version>
+		<spring-data-commons.version>1.12.5.RELEASE</spring-data-commons.version>
 		<spring-data-hazelcast.version>1.0</spring-data-hazelcast.version>
+		<spring-data-keyvalue.version>1.1.5.RELEASE</spring-data-keyvalue.version>
 	</properties>
 	
 	<dependencies>
@@ -60,6 +62,18 @@
 						<artifactId>hazelcast</artifactId>
 					</exclusion>
 				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-commons</artifactId>
+				<version>${spring-data-commons.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-keyvalue</artifactId>
+				<version>${spring-data-keyvalue.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

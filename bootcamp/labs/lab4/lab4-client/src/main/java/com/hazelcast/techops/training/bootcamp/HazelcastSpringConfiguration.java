@@ -1,6 +1,5 @@
 package com.hazelcast.techops.training.bootcamp;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.hazelcast.HazelcastKeyValueAdapter;
@@ -22,23 +21,15 @@ import com.hazelcast.core.HazelcastInstance;
 @EnableHazelcastRepositories
 public class HazelcastSpringConfiguration {
 
-	@Autowired
-	private HazelcastInstance hazelcastInstance;
-
 	@Bean
 	public HazelcastInstance hazelcastInstance() throws Exception {
 		ClientConfig clientConfig = new XmlClientConfigBuilder("hazelcast-client.xml").build();
 		return HazelcastClient.newHazelcastClient(clientConfig);
 	}
 	
-	@Bean
-	public HazelcastKeyValueAdapter hazelcastKeyValueAdapter(HazelcastInstance hazelcastInstance) {
-	    return new HazelcastKeyValueAdapter(this.hazelcastInstance);
-	}
-
-	@Bean
-    public KeyValueTemplate keyValueTemplate(HazelcastKeyValueAdapter hazelcastKeyValueAdapter) {
-		return new KeyValueTemplate(hazelcastKeyValueAdapter);
-	}
+    @Bean
+    public KeyValueTemplate keyValueTemplate(HazelcastInstance hazelcastInstance) {
+            return new KeyValueTemplate(new HazelcastKeyValueAdapter(hazelcastInstance));
+    }   
 
 }
