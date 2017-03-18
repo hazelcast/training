@@ -3,11 +3,13 @@ package com.hazelcast.techops.training.bootcamp;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.hazelcast.config.Config;
 import com.hazelcast.config.GroupConfig;
+import com.hazelcast.config.ManagementCenterConfig;
 import com.hazelcast.config.NetworkConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
@@ -25,24 +27,36 @@ public class HazelcastSpringConfiguration {
 	@Autowired
 	private Config config;
 	
+	@Value("${spring.application.name}")
+	private String springApplicationName;
+	
 	@Bean
 	public GroupConfig groupConfig() {
 		
 		GroupConfig groupConfig = new GroupConfig();
 		
-		groupConfig.setName("lab3-" + System.getProperty("user.name"));
+		groupConfig.setName(this.springApplicationName);
 		groupConfig.setPassword(System.getProperty("user.name"));
 		
 		log.info(groupConfig.toString());
 		
 		return groupConfig;
 	}
-	
+
 	@Bean
-	public Config config(GroupConfig groupConfig) {
+	public ManagementCenterConfig managementCenterConfig() {
+		return new ManagementCenterConfig()
+				.setEnabled(true)
+				.setUrl("http://localhost:8080/mancenter");
+	}
+
+	@Bean
+	public Config config(GroupConfig groupConfig, ManagementCenterConfig managementCenterConfig) {
 		Config config = new Config();
 		
 		config.setGroupConfig(groupConfig);
+		
+		config.setManagementCenterConfig(managementCenterConfig);
 		
 		NetworkConfig networkConfig = config.getNetworkConfig();
 		networkConfig.setPort(5701);

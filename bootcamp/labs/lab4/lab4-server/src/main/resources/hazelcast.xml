@@ -8,6 +8,8 @@
         <password>${user.name}</password>
     </group>
     
+    <management-center enabled="true">http://localhost:8080/mancenter</management-center>
+    
     <network>
         <port auto-increment="true" port-count="3">5701</port>
         <join>

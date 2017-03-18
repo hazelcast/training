@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: lab3-${user.name}
