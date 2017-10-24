@@ -24,18 +24,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HazelcastSpringConfiguration {
 
-	@Autowired
-	private Config config;
-	
-	@Value("${spring.application.name}")
-	private String springApplicationName;
-	
 	@Bean
-	public GroupConfig groupConfig() {
+	public GroupConfig groupConfig(
+			@Value("${spring.application.name}") String springApplicationName
+			) {
+		log.error("GROUPR CONFIG");//XXX
 		
 		GroupConfig groupConfig = new GroupConfig();
 		
-		groupConfig.setName(this.springApplicationName);
+		groupConfig.setName(springApplicationName);
 		groupConfig.setPassword(System.getProperty("user.name"));
 		
 		log.info(groupConfig.toString());
@@ -52,6 +49,7 @@ public class HazelcastSpringConfiguration {
 
 	@Bean
 	public Config config(GroupConfig groupConfig, ManagementCenterConfig managementCenterConfig) {
+		log.error("CONFIG");//XXX
 		Config config = new Config();
 		
 		config.setGroupConfig(groupConfig);
@@ -70,19 +68,20 @@ public class HazelcastSpringConfiguration {
 		
 		return config;
 	}
+
 	
 	@Bean
-	public HazelcastInstance hazelcastInstance1() {
-		return Hazelcast.newHazelcastInstance(this.config);
+	public HazelcastInstance hazelcastInstance1(Config config) {
+		return Hazelcast.newHazelcastInstance(config);
 	}
 	
 	@Bean
-	public HazelcastInstance hazelcastInstance2() {
-		return Hazelcast.newHazelcastInstance(this.config);
+	public HazelcastInstance hazelcastInstance2(Config config) {
+		return Hazelcast.newHazelcastInstance(config);
 	}
 	
 	@Bean
-	public HazelcastInstance hazelcastInstance3() {
-		return Hazelcast.newHazelcastInstance(this.config);
+	public HazelcastInstance hazelcastInstance3(Config config) {
+		return Hazelcast.newHazelcastInstance(config);
 	}
 }
