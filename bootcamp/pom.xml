@@ -14,7 +14,7 @@
   
 	<properties>
 		<hazelcast.version>3.9</hazelcast.version>
-		<hazelcast-spring.version>3.8</hazelcast-spring.version>
+		<hazelcast-spring.version>3.9</hazelcast-spring.version>
 		<java.version>8</java.version>
 		<spring-data-commons.version>1.12.5.RELEASE</spring-data-commons.version>
 		<spring-data-hazelcast.version>1.0</spring-data-hazelcast.version>
