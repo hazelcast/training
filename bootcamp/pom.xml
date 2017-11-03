@@ -24,7 +24,14 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.hazelcast</groupId>
-			<artifactId>hazelcast</artifactId>
+			<artifactId>hazelcast-enterprise</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast-enterprise-client</artifactId>
+			<version>3.9</version>
 		</dependency>
 		
         <dependency>
@@ -40,11 +47,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>com.hazelcast</groupId>
-				<artifactId>hazelcast-client</artifactId>
-				<version>${hazelcast.version}</version>
-			</dependency>
+
 			
 			<dependency>
 				<groupId>com.hazelcast</groupId>
@@ -91,6 +94,10 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</repository>
+		<repository>
+			<id>Hazelcast Private Release Repository</id>
+			<url>https://repository-hazelcast-l337.forge.cloudbees.com/release/</url>
 		</repository>
 	</repositories>
 
