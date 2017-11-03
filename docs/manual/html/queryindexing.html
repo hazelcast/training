@@ -1,0 +1,4494 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="canonical" href="http://docs.hazelcast.org/docs/latest-dev/manual/html-single/"/>
+<noscript>
+	<meta http-equiv="refresh" content="0;URL=http://docs.hazelcast.org/docs/latest-dev/manual/html-single/">
+</noscript>
+
+<!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+<script type="text/javascript">
+	var url = "http://docs.hazelcast.org/docs/latest-dev/manual/html-single/";
+	if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+	{
+		document.write("redirecting..."); // Don't remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
+		var referLink = document.createElement("a");
+		referLink.href = url;
+		document.body.appendChild(referLink);
+		referLink.click();
+	}
+	else { window.location.replace(url); } // All other browsers
+</script>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Hazelcast Documentation Version: 3.9</title>
+
+    <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/docs.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/print.css" media="print">
+    
+
+    <script type="text/javascript" src="assets/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.sticky-kit.js"></script>
+    <script type="text/javascript" src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+    <script type="text/javascript" src="assets/js/lunr.min.js"></script>
+
+    
+
+    <script type="text/javascript">var BASE_URL = "";</script>
+    <script type="text/javascript" src="assets/js/viewer.js"></script>
+    <script type="text/javascript" src="assets/js/toc.scroll.js"></script>
+
+    <script type="text/javascript">
+  	$(function(){
+		$("#sidebar").stick_in_parent()
+	});
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3921306-1']);
+        _gaq.push(['_setDomainName', 'hazelcast.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+            var b=document.getElementsByTagName("script")[0];
+            a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0020/7413.js?"+Math.floor(new Date().getTime()/3600000);
+            a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+</head>
+<body>
+    <div id="page">
+        <a name="top" />
+         <div id="sitebar">
+    <div class="content">
+      <p><a href="http://hazelcast.org/documentation">Go to <span style="font-weight:bold">hazelcast.org/documentation</span></a></p>
+      </div>
+  </div>
+
+        <header id="header">
+			<div class="content">
+			<div style="overflow:hidden">
+				<div style="float:left">
+                    <a href="http://www.hazelcast.org"><img src="assets/img/logo.png" style="width: 199px;padding-top: 18px"/></a>
+					
+				</div>	
+					<div style="float:left;padding-top: 30px;padding-left: 30px;">
+					<a href=""></a> <span style="font-size:36px;color:white"> Reference Manual </span> <span style="font-size:12px;color:white"> Version: 3.9 - Publication Date : Oct 23, 2017 </span>
+					</div>
+			</div>
+			</div>
+        </header>
+        <div class="content" style="width:1200px; margin: 0 auto">
+	        
+
+	<div id="sidebar" style="overflow-y:auto">
+	    <form action="search.html"><input id="search" type="text" placeholder="Search" name="q" /></form>
+	    <nav id="toc">
+	        
+    <ol>
+    
+        <li>
+             <a href="preface.html#preface">Preface</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="preface.html#hazelcast-imdg-editions">Hazelcast IMDG Editions</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#hazelcast-imdg-architecture">Hazelcast IMDG Architecture</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#hazelcast-imdg-plugins">Hazelcast IMDG Plugins</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#licensing">Licensing</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#trademarks">Trademarks</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#customer-support">Customer Support</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#release-notes">Release Notes</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#contributing-to-hazelcast-imdg">Contributing to Hazelcast IMDG</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#partners">Partners</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#phone-home">Phone Home</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="preface.html#typographical-conventions">Typographical Conventions</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="documentrevisionhistory.html#document-revision-history">Document Revision History</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="installinghazelcast.html#getting-started">Getting Started</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="installinghazelcast.html#installation">Installation</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="installinghazelcast.html#hazelcast-imdg">Hazelcast IMDG</a>
+            
+        </li>
+    
+        <li>
+             <a href="installinghazelcastenterprise.html#hazelcast-imdg-enterprise">Hazelcast IMDG Enterprise</a>
+            
+        </li>
+    
+        <li>
+             <a href="licensekeys.html#setting-the-license-key">Setting the License Key</a>
+            
+        </li>
+    
+        <li>
+             <a href="upgradingfrom3x.html#upgrading-from-3x">Upgrading from 3.x</a>
+            
+        </li>
+    
+        <li>
+             <a href="upgradingfrom2x.html#upgrading-from-2x">Upgrading from 2.x</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="startingmemberandclient.html#starting-the-member-and-client">Starting the Member and Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="usingthescripts.html#using-the-scripts-in-the-package">Using the Scripts In The Package</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="deployingonamazonec2.html#deploying-on-amazon-ec2">Deploying On Amazon EC2</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="deployingonazure.html#deploying-on-microsoft-azure">Deploying On Microsoft Azure</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="deployingoncf.html#deploying-on-pivotal-cloud-foundry">Deploying On Pivotal Cloud Foundry</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="deploymentviadocker.html#deploying-using-docker">Deploying using Docker</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="hazelcastoverview.html#hazelcast-overview">Hazelcast Overview</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="shardinginhazelcast.html#sharding-in-hazelcast">Sharding in Hazelcast</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="hazelcasttopology.html#hazelcast-topology">Hazelcast Topology</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="whyhazelcast.html#why-hazelcast">Why Hazelcast?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="datapartitioning.html#data-partitioning">Data Partitioning</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="datapartitioning.html#how-the-data-is-partitioned">How the Data is Partitioned</a>
+            
+        </li>
+    
+        <li>
+             <a href="datapartitioning.html#partition-table">Partition Table</a>
+            
+        </li>
+    
+        <li>
+             <a href="datapartitioning.html#repartitioning">Repartitioning</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="usecases.html#use-cases">Use Cases</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="resources.html#resources">Resources</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#understanding-configuration">Understanding Configuration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="understandingconfiguration.html#configuring-declaratively">Configuring Declaratively</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="understandingconfiguration.html#composing-declarative-configuration">Composing Declarative Configuration</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#configuring-programmatically">Configuring Programmatically</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#configuring-with-system-properties">Configuring with System Properties</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#configuring-within-spring-context">Configuring within Spring Context</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#dynamically-adding-data-structure-configuration-on-a-cluster">Dynamically Adding Data Structure Configuration on a Cluster</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="understandingconfiguration.html#handling-configuration-conflicts">Handling Configuration Conflicts</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#checking-configuration">Checking Configuration</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#configuration-pattern-matcher">Configuration Pattern Matcher</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#using-wildcards">Using Wildcards</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="understandingconfiguration.html#using-variables">Using Variables</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#setting-up-clusters">Setting Up Clusters</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="settingupclusters.html#discovery-mechanisms">Discovery Mechanisms</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="settingupclusters.html#tcp">TCP</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#multicast">Multicast</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#aws-cloud-discovery">AWS Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#apache-jclouds-cloud-discovery">Apache jclouds® Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#azure-cloud-discovery">Azure Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#zookeeper-cloud-discovery">Zookeeper Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#consul-cloud-discovery">Consul Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#etcd-cloud-discovery">etcd Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#hazelcast-for-pcf">Hazelcast for PCF</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#hazelcast-openshift-integration">Hazelcast OpenShift Integration</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#eureka-cloud-discovery">Eureka Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#heroku-cloud-discovery">Heroku Cloud Discovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="settingupclusters.html#kubernetes-cloud-discovery">Kubernetes Cloud Discovery</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="tcp.html#discovering-members-by-tcp">Discovering Members by TCP</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="multicast.html#discovering-members-by-multicast">Discovering Members by Multicast</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="discoveringnativeclients.html#discovering-native-clients">Discovering Native Clients</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="createclustergroups.html#creating-cluster-groups">Creating Cluster Groups</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="usercodedeployment.html#member-user-code-deployment-beta">Member User Code Deployment - BETA</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="usercodedeployment.html#configuring-user-code-deployment">Configuring User Code Deployment</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clientusercodedeployment.html#client-user-code-deployment-beta">Client User Code Deployment - BETA</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clientusercodedeployment.html#configuring-client-user-code-deployment">Configuring Client User Code Deployment</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="partitiongroupconfig.html#partition-group-configuration">Partition Group Configuration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="partitiongroupconfig.html#grouping-types">Grouping Types</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="logging.html#logging-configuration">Logging Configuration</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#other-network-configurations">Other Network Configurations</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#public-address">Public Address</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#port">Port</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#outbound-ports">Outbound Ports</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#reuse-address">Reuse Address</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#join">Join</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#interfaces">Interfaces</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#ipv6-support">IPv6 Support</a>
+            
+        </li>
+    
+        <li>
+             <a href="othernetworkconfigurations.html#member-address-provider-spi">Member Address Provider SPI</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="failuredetectorconfig.html#failure-detector-configuration">Failure Detector Configuration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="failuredetectorconfig.html#deadline-failure-detector">Deadline Failure Detector</a>
+            
+        </li>
+    
+        <li>
+             <a href="failuredetectorconfig.html#phi-accrual-failure-detector">Phi Accrual Failure Detector</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#rolling-member-upgrades">Rolling Member Upgrades</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#terminology">Terminology</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#hazelcast-members-compatibility-guarantees">Hazelcast Members Compatibility Guarantees</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#rolling-upgrade-procedure">Rolling Upgrade Procedure</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#network-partitions-and-rolling-upgrades">Network Partitions and Rolling Upgrades</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="rollingmemberupgrades.html#rolling-upgrade-faq">Rolling Upgrade FAQ</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="dds.html#distributed-data-structures">Distributed Data Structures</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="map.html#map">Map</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="map.html#getting-a-map-and-putting-an-entry">Getting a Map and Putting an Entry</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-backups.html#backing-up-maps">Backing Up Maps</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-eviction.html#map-eviction">Map Eviction</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-eviction.html#evicting-map-entries">Evicting Map Entries</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-inmemoryformat.html#setting-in-memory-format">Setting In-Memory Format</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-usinghd.html#using-high-density-memory-store-with-map">Using High-Density Memory Store with Map</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-persistence.html#loading-and-storing-persistent-data">Loading and Storing Persistent Data</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-nearcache.html#creating-near-cache-for-map">Creating Near Cache for Map</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-locks.html#locking-maps">Locking Maps</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-locks.html#lock-split-brain-protection-with-pessimistic-locking">Lock Split-Brain Protection with Pessimistic Locking</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-entrystatistics.html#accessing-entry-statistics">Accessing Entry Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-maplistener.html#map-listener">Map Listener</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-listenerwithpredicates.html#listening-to-map-entries-with-predicates">Listening to Map Entries with Predicates</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-removeall.html#removing-map-entries-in-bulk-with-predicates">Removing Map Entries in Bulk with Predicates</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-interceptors.html#adding-interceptors">Adding Interceptors</a>
+            
+        </li>
+    
+        <li>
+             <a href="map-queryresultsizelimiter.html#preventing-out-of-memory-exceptions">Preventing Out of Memory Exceptions</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="queue.html#queue">Queue</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="queue.html#getting-a-queue-and-putting-items">Getting a Queue and Putting Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="queue-samplequeuecode.html#creating-an-example-queue">Creating an Example Queue</a>
+            
+        </li>
+    
+        <li>
+             <a href="queue-boundedqueue.html#setting-a-bounded-queue">Setting a Bounded Queue</a>
+            
+        </li>
+    
+        <li>
+             <a href="queue-persistence.html#queueing-with-persistent-datastore">Queueing with Persistent Datastore</a>
+            
+        </li>
+    
+        <li>
+             <a href="queue-quorum.html#split-brain-protection-for-queue">Split-Brain Protection for Queue</a>
+            
+        </li>
+    
+        <li>
+             <a href="queue-configuration.html#configuring-queue">Configuring Queue</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="multimap.html#multimap">MultiMap</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="multimap.html#getting-a-multimap-and-putting-an-entry">Getting a MultiMap and Putting an Entry</a>
+            
+        </li>
+    
+        <li>
+             <a href="multimap.html#configuring-multimap">Configuring MultiMap</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="set.html#set">Set</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="set.html#getting-a-set-and-putting-items">Getting a Set and Putting Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="set.html#configuring-set">Configuring Set</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="list.html#list">List</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="list.html#getting-a-list-and-putting-items">Getting a List and Putting Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="list.html#configuring-list">Configuring List</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#ringbuffer">Ringbuffer</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="ringbuffer.html#getting-a-ringbuffer-and-reading-items">Getting a Ringbuffer and Reading Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#adding-items-to-a-ringbuffer">Adding Items to a Ringbuffer</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#iqueue-vs-ringbuffer">IQueue vs. Ringbuffer</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#configuring-ringbuffer-capacity">Configuring Ringbuffer Capacity</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#backing-up-ringbuffer">Backing Up Ringbuffer</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#configuring-ringbuffer-time-to-live">Configuring Ringbuffer Time To Live</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#setting-ringbuffer-overflow-policy">Setting Ringbuffer Overflow Policy</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#ringbuffer-with-persistent-datastore">Ringbuffer with Persistent Datastore</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#configuring-ringbuffer-in-memory-format">Configuring Ringbuffer In-Memory Format</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#adding-batched-items">Adding Batched Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#reading-batched-items">Reading Batched Items</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#using-async-methods">Using Async Methods</a>
+            
+        </li>
+    
+        <li>
+             <a href="ringbuffer.html#ringbuffer-configuration-examples">Ringbuffer Configuration Examples</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="topic.html#topic">Topic</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="topic.html#getting-a-topic-and-publishing-messages">Getting a Topic and Publishing Messages</a>
+            
+        </li>
+    
+        <li>
+             <a href="topic-statistics.html#getting-topic-statistics">Getting Topic Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="topic-internals.html#understanding-topic-behavior">Understanding Topic Behavior</a>
+            
+        </li>
+    
+        <li>
+             <a href="topic-configuration.html#configuring-topic">Configuring Topic</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="reliabletopic.html#reliable-topic">Reliable Topic</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="reliabletopic.html#sample-reliable-itopic-code">Sample Reliable ITopic Code</a>
+            
+        </li>
+    
+        <li>
+             <a href="reliabletopic.html#slow-consumers">Slow Consumers</a>
+            
+        </li>
+    
+        <li>
+             <a href="reliabletopic.html#configuring-reliable-topic">Configuring Reliable Topic</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#lock">Lock</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="lock.html#using-try-catch-blocks-with-locks">Using Try-Catch Blocks with Locks</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#releasing-locks-with-trylock-timeout">Releasing Locks with tryLock Timeout</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#avoiding-waiting-threads-with-lease-time">Avoiding Waiting Threads with Lease Time</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#understanding-lock-behavior">Understanding Lock Behavior</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#synchronizing-threads-with-icondition">Synchronizing Threads with ICondition</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#split-brain-protection-for-lock">Split-Brain Protection for Lock</a>
+            
+        </li>
+    
+        <li>
+             <a href="lock.html#lock-configuration">Lock Configuration</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="iatomiclong.html#iatomiclong">IAtomicLong</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="iatomiclong.html#sending-functions-to-iatomiclong">Sending Functions to IAtomicLong</a>
+            
+        </li>
+    
+        <li>
+             <a href="iatomiclong.html#executing-functions-on-iatomiclong">Executing Functions on IAtomicLong</a>
+            
+        </li>
+    
+        <li>
+             <a href="iatomiclong.html#reasons-to-use-functions-with-iatomic">Reasons to Use Functions with IAtomic</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="isemaphore.html#isemaphore">ISemaphore</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="isemaphore.html#controlling-thread-counts-with-permits">Controlling Thread Counts with Permits</a>
+            
+        </li>
+    
+        <li>
+             <a href="isemaphore.html#example-semaphore-code">Example Semaphore Code</a>
+            
+        </li>
+    
+        <li>
+             <a href="isemaphore.html#configuring-semaphore">Configuring Semaphore</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="iatomicreference.html#iatomicreference">IAtomicReference</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="iatomicreference.html#sending-functions-to-iatomicreference">Sending Functions to IAtomicReference</a>
+            
+        </li>
+    
+        <li>
+             <a href="iatomicreference.html#using-iatomicreference">Using IAtomicReference</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="icountdownlatch.html#icountdownlatch">ICountDownLatch</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="icountdownlatch.html#gate-keeping-concurrent-activities">Gate-Keeping Concurrent Activities</a>
+            
+        </li>
+    
+        <li>
+             <a href="icountdownlatch.html#recovering-from-failure">Recovering From Failure</a>
+            
+        </li>
+    
+        <li>
+             <a href="icountdownlatch.html#using-icountdownlatch">Using ICountDownLatch</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="idgenerator.html#idgenerator">IdGenerator</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="idgenerator.html#generating-cluster-wide-ids">Generating Cluster-Wide IDs</a>
+            
+        </li>
+    
+        <li>
+             <a href="idgenerator.html#unique-ids-and-duplicate-ids">Unique IDs and Duplicate IDs</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#replicated-map">Replicated Map</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="replicatedmap.html#replicating-instead-of-partitioning">Replicating Instead of Partitioning</a>
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#example-replicated-map-code">Example Replicated Map Code</a>
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#considerations-for-replicated-map">Considerations for Replicated Map</a>
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#configuration-design-for-replicated-map">Configuration Design for Replicated Map</a>
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#configuring-replicated-map">Configuring Replicated Map</a>
+            
+        </li>
+    
+        <li>
+             <a href="replicatedmap.html#using-entrylistener-on-replicated-map">Using EntryListener on Replicated Map</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="cardinalityestimator.html#cardinality-estimator-service">Cardinality Estimator Service</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="cardinalityestimator.html#cardinality-estimator-api">Cardinality Estimator API</a>
+            
+        </li>
+    
+        <li>
+             <a href="cardinalityestimator.html#examples">Examples</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="eventjournal.html#event-journal">Event Journal</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="eventjournal.html#interaction-with-evictions-and-expiration-for-imap">Interaction with Evictions and Expiration for IMap</a>
+            
+        </li>
+    
+        <li>
+             <a href="eventjournal.html#configuring-event-journal">Configuring Event Journal</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="distributedevents.html#distributed-events">Distributed Events</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusterevents.html#cluster-events">Cluster Events</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-member-events">Listening for Member Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-distributed-object-events">Listening for Distributed Object Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-migration-events">Listening for Migration Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-partition-lost-events">Listening for Partition Lost Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-lifecycle-events">Listening for Lifecycle Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusterevents.html#listening-for-clients">Listening for Clients</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="distributedobjectevents.html#distributed-object-events">Distributed Object Events</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="distributedobjectevents.html#listening-for-map-events">Listening for Map Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="distributedobjectevents.html#listening-for-multimap-events">Listening for MultiMap Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="distributedobjectevents.html#listening-for-item-events">Listening for Item Events</a>
+            
+        </li>
+    
+        <li>
+             <a href="distributedobjectevents.html#listening-for-topic-messages">Listening for Topic Messages</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clientevents.html#event-listeners-for-hazelcast-clients">Event Listeners for Hazelcast Clients</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="globaleventconfiguration.html#global-event-configuration">Global Event Configuration</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="distributedcomputing.html#distributed-computing">Distributed Computing</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="distributedcomputing.html#executor-service">Executor Service</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="distributedcomputing.html#implementing-a-callable-task">Implementing a Callable Task</a>
+            
+        </li>
+    
+        <li>
+             <a href="distributedcomputing.html#implementing-a-runnable-task">Implementing a Runnable Task</a>
+            
+        </li>
+    
+        <li>
+             <a href="distributedcomputing.html#scaling-the-executor-service">Scaling The Executor Service</a>
+            
+        </li>
+    
+        <li>
+             <a href="execution.html#executing-code-in-the-cluster">Executing Code in the Cluster</a>
+            
+        </li>
+    
+        <li>
+             <a href="executioncancellation.html#canceling-an-executing-task">Canceling an Executing Task</a>
+            
+        </li>
+    
+        <li>
+             <a href="executioncallback.html#callback-when-task-completes">Callback When Task Completes</a>
+            
+        </li>
+    
+        <li>
+             <a href="executionmemberselector.html#selecting-members-for-task-execution">Selecting Members for Task Execution</a>
+            
+        </li>
+    
+        <li>
+             <a href="executionmemberselector.html#configuring-executor-service">Configuring Executor Service</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="durableexecutorservice.html#durable-executor-service">Durable Executor Service</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="durableexecutorservice.html#configuring-durable-executor-service">Configuring Durable Executor Service</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="scheduledexecutorservice.html#scheduled-executor-service">Scheduled Executor Service</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="scheduledexecutorservice.html#scheduled-executor-api">Scheduled Executor API</a>
+            
+        </li>
+    
+        <li>
+             <a href="scheduledexecutorservice.html#configuring-scheduled-executor-service">Configuring Scheduled Executor Service</a>
+            
+        </li>
+    
+        <li>
+             <a href="scheduledexecutorservice.html#examples">Examples</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessor.html#entry-processor">Entry Processor</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="entryprocessor.html#performing-fast-in-memory-map-operations">Performing Fast In-Memory Map Operations</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessor.html#using-indexes">Using Indexes</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessor.html#using-object-in-memory-format">Using OBJECT In-Memory Format</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessor.html#entryprocessor-interface">`EntryProcessor` Interface</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessor.html#processing-backup-entries">Processing Backup Entries</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessorsamplecode.html#creating-an-entry-processor">Creating an Entry Processor</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessorabstract.html#abstract-entry-processor">Abstract Entry Processor</a>
+            
+        </li>
+    
+        <li>
+             <a href="entryprocessoroptimizations.html#entry-processor-performance-optimizations">Entry Processor Performance Optimizations</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="distributedquery.html#distributed-query">Distributed Query</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="distributedquery.html#how-distributed-query-works">How Distributed Query Works</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="distributedquery.html#employee-map-query-example">Employee Map Query Example</a>
+            
+        </li>
+    
+        <li>
+             <a href="querycriteriaapi.html#querying-with-criteria-api">Querying with Criteria API</a>
+            
+        </li>
+    
+        <li>
+             <a href="querysql.html#querying-with-sql">Querying with SQL</a>
+            
+        </li>
+    
+        <li>
+             <a href="querypagingpredicate.html#filtering-with-paging-predicates">Filtering with Paging Predicates</a>
+            
+        </li>
+    
+        <li>
+             <a href="queryindexing.html#indexing-queries">Indexing Queries</a>
+            
+        </li>
+    
+        <li>
+             <a href="querythreadconfiguration.html#configuring-query-thread-pool">Configuring Query Thread Pool</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="querycollections.html#querying-in-collections-and-arrays">Querying in Collections and Arrays</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="querycollections.html#indexing-in-collections-and-arrays">Indexing in Collections and Arrays</a>
+            
+        </li>
+    
+        <li>
+             <a href="querycollections.html#corner-cases">Corner cases</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="customattributes.html#custom-attributes">Custom Attributes</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="customattributes.html#implementing-a-valueextractor">Implementing a ValueExtractor</a>
+            
+        </li>
+    
+        <li>
+             <a href="customattributes.html#extraction-arguments">Extraction Arguments</a>
+            
+        </li>
+    
+        <li>
+             <a href="customattributes.html#configuring-a-custom-attribute-programmatically">Configuring a Custom Attribute Programmatically</a>
+            
+        </li>
+    
+        <li>
+             <a href="customattributes.html#configuring-a-custom-attribute-declaratively">Configuring a Custom Attribute Declaratively</a>
+            
+        </li>
+    
+        <li>
+             <a href="customattributes.html#indexing-custom-attributes">Indexing Custom Attributes</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="mapreduce.html#mapreduce">MapReduce</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="mr-essentials.html#understanding-mapreduce">Understanding MapReduce</a>
+            
+        </li>
+    
+        <li>
+             <a href="mr-introduction.html#using-the-mapreduce-api">Using the MapReduce API</a>
+            
+        </li>
+    
+        <li>
+             <a href="mr-architecture.html#hazelcast-mapreduce-architecture">Hazelcast MapReduce Architecture</a>
+            
+        </li>
+    
+        <li>
+             <a href="mr-deprecation.html#mapreduce-deprecation">MapReduce Deprecation</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="aggregators.html#aggregators">Aggregators</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="aggregators.html#aggregations-basics">Aggregations Basics</a>
+            
+        </li>
+    
+        <li>
+             <a href="aggregatorsintroduction.html#using-the-aggregations-api">Using the Aggregations API</a>
+            
+        </li>
+    
+        <li>
+             <a href="aggregatorsexample.html#aggregations-examples">Aggregations Examples</a>
+            
+        </li>
+    
+        <li>
+             <a href="aggregatorsimplementation.html#implementing-aggregations">Implementing Aggregations</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="fastaggregations.html#fast-aggregations">Fast-Aggregations</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="fastaggregations.html#aggregator-api">Aggregator API</a>
+            
+        </li>
+    
+        <li>
+             <a href="fastaggregations.html#sample-implementation">Sample Implementation</a>
+            
+        </li>
+    
+        <li>
+             <a href="fastaggregations.html#built-in-aggregations">Built-In Aggregations</a>
+            
+        </li>
+    
+        <li>
+             <a href="fastaggregations.html#configuration-options">Configuration Options</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="projections.html#projections">Projections</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="projections.html#projections-api">Projections API</a>
+            
+        </li>
+    
+        <li>
+             <a href="projections.html#sample-implementation">Sample implementation</a>
+            
+        </li>
+    
+        <li>
+             <a href="projections.html#built-in-projections">Built-In Projections</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="continuousquerycache.html#continuous-query-cache">Continuous Query Cache</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="continuousquerycache.html#keeping-query-results-local-and-ready">Keeping Query Results Local and Ready</a>
+            
+        </li>
+    
+        <li>
+             <a href="continuousquerycache.html#accessing-continuous-query-cache-from-member">Accessing Continuous Query Cache from Member</a>
+            
+        </li>
+    
+        <li>
+             <a href="continuousquerycache.html#accessing-continuous-query-cache-from-client-side">Accessing Continuous Query Cache from Client Side</a>
+            
+        </li>
+    
+        <li>
+             <a href="continuousquerycache.html#features-of-continuous-query-cache">Features of Continuous Query Cache</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="transactions.html#transactions">Transactions</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="transactions.html#creating-a-transaction-interface">Creating a Transaction Interface</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="transactions.html#queuesetlist-vs-mapmultimap">Queue/Set/List vs. Map/Multimap</a>
+            
+        </li>
+    
+        <li>
+             <a href="transactions.html#one-phase-vs-two-phase">ONE_PHASE vs. TWO_PHASE</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="xatransactions.html#providing-xa-transactions">Providing XA Transactions</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache.html#hazelcast-jcache">Hazelcast JCache</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache.html#jcache-overview">JCache Overview</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-setup.html#jcache-setup-and-configuration">JCache Setup and Configuration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache-setup.html#setting-up-your-application">Setting up Your Application</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-quickexample.html#example-jcache-application">Example JCache Application</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-jcacheconfiguration.html#configuring-for-jcache">Configuring for JCache</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-providers.html#jcache-providers">JCache Providers</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache-providers.html#configuring-jcache-provider">Configuring JCache Provider</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-clientprovider.html#configuring-jcache-with-client-provider">Configuring JCache with Client Provider</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-serverprovider.html#configuring-jcache-with-server-provider">Configuring JCache with Server Provider</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-api.html#jcache-api">JCache API</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache-api.html#jcache-api-application-example">JCache API Application Example</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-apibasics.html#jcache-base-classes">JCache Base Classes</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-apifactory.html#implementing-factory-and-factorybuilder">Implementing Factory and FactoryBuilder</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-apicacheloader.html#implementing-cacheloader">Implementing CacheLoader</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-apicachewriter.html#cachewriter">CacheWriter</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-ep.html#implementing-entryprocessor">Implementing EntryProcessor</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-cacheentrylistener.html#cacheentrylistener">CacheEntryListener</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-expirepolicy.html#expirepolicy">ExpirePolicy</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-hzinstance.html#jcache-hazelcast-instance-integration">JCache - Hazelcast Instance Integration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache-hzinstance.html#jcache-and-hazelcast-instance-awareness">JCache and Hazelcast Instance Awareness</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-icache.html#hazelcast-jcache-extension-icache">Hazelcast JCache Extension - ICache</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="jcache-icache.html#scoping-to-join-clusters">Scoping to Join Clusters</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-icache.html#namespacing">Namespacing</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-retrievingicacheinstance.html#retrieving-an-icache-instance">Retrieving an ICache Instance</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-icacheconf.html#icache-configuration">ICache Configuration</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-asyncoperations.html#icache-async-methods">ICache Async Methods</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-customexpirypolicy.html#defining-a-custom-expirypolicy">Defining a Custom ExpiryPolicy</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-eviction.html#jcache-eviction">JCache Eviction</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-nearcache.html#jcache-near-cache">JCache Near Cache</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-additionalmethods.html#icache-convenience-methods">ICache Convenience Methods</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-backupawareep.html#implementing-backupawareentryprocessor">Implementing BackupAwareEntryProcessor</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-partitionlostlistener.html#icache-partition-lost-listener">ICache Partition Lost Listener</a>
+            
+        </li>
+    
+        <li>
+             <a href="jcache-splitbrain.html#jcache-split-brain">JCache Split-Brain</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jcache-speccompliance.html#testing-for-jcache-specification-compliance">Testing for JCache Specification Compliance</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="integratedclustering.html#integrated-clustering">Integrated Clustering</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="hibernate.html#hibernate-second-level-cache">Hibernate Second Level Cache</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="websessionreplication.html#web-session-replication">Web Session Replication</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="websessionreplication.html#filter-based-web-session-replication">Filter Based Web Session Replication</a>
+            
+        </li>
+    
+        <li>
+             <a href="tomcatsessionreplication.html#tomcat-based-web-session-replication">Tomcat Based Web Session Replication</a>
+            
+        </li>
+    
+        <li>
+             <a href="jettysessionreplication.html#jetty-based-web-session-replication">Jetty Based Web Session Replication</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#spring-integration">Spring Integration</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="springintegration.html#supported-versions">Supported Versions</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#configuring-spring">Configuring Spring</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#enabling-springaware-objects">Enabling SpringAware Objects</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#adding-caching-to-spring">Adding Caching to Spring</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#configuring-hibernate-second-level-cache">Configuring Hibernate Second Level Cache</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#configuring-hazelcast-transaction-manager">Configuring Hazelcast Transaction Manager</a>
+            
+        </li>
+    
+        <li>
+             <a href="springintegration.html#best-practices">Best Practices</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="javaeeintegration.html#integrating-into-java-ee">Integrating into Java EE</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="storage-hd.html#storage">Storage</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="storage-hd.html#high-density-memory-store">High-Density Memory Store</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="configuringhd.html#configuring-high-density-memory-store">Configuring High-Density Memory Store</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="sizingpractices.html#sizing-practices">Sizing Practices</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-restart-persistence">Hot Restart Persistence</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-restart-persistence-overview">Hot Restart Persistence Overview</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-restart-types">Hot Restart Types</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#restart-process">Restart Process</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#force-start">Force Start</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#partial-start">Partial Start</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#configuring-hot-restart">Configuring Hot Restart</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#movingcopying-hot-restart-data">Moving/Copying Hot Restart Data</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-restart-persistence-design-details">Hot Restart Persistence Design Details</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#concurrent-incremental-generational-gc">Concurrent, Incremental, Generational GC</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-restart-performance-considerations">Hot Restart Performance Considerations</a>
+            
+        </li>
+    
+        <li>
+             <a href="hotrestartpersistence.html#hot-backup">Hot Backup</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="hazelcaststriim.html#hazelcast-striim-hot-cache">Hazelcast Striim Hot Cache</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="javaclient.html#hazelcast-java-client">Hazelcast Java Client</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="javaclient.html#hazelcast-clients-feature-comparison">Hazelcast Clients Feature Comparison</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#java-client-overview">Java Client Overview</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="javaclientoverview.html#including-dependencies-for-java-clients">Including Dependencies for Java Clients</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#getting-started-with-client-api">Getting Started with Client API</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#java-client-operation-modes">Java Client Operation Modes</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#handling-failures">Handling Failures</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#using-supported-distributed-data-structures">Using Supported Distributed Data Structures</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#using-client-services">Using Client Services</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#client-listeners">Client Listeners</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#client-transactions">Client Transactions</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientoverview.html#async-start-and-reconnect-modes">Async Start and Reconnect Modes</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-java-client">Configuring Java Client</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-client-network">Configuring Client Network</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-client-load-balancer">Configuring Client Load Balancer</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-client-near-cache">Configuring Client Near Cache</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#client-group-configuration">Client Group Configuration</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#client-security-configuration">Client Security Configuration</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#client-serialization-configuration">Client Serialization Configuration</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-client-listeners">Configuring Client Listeners</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#configuring-client-connection-strategy">Configuring Client Connection Strategy</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#executorpoolsize">ExecutorPoolSize</a>
+            
+        </li>
+    
+        <li>
+             <a href="javaclientconfiguration.html#classloader">ClassLoader</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="systemproperties-client.html#client-system-properties">Client System Properties</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="systemproperties-client.html#sample-codes-for-client">Sample Codes for Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="javaclienthd.html#using-high-density-memory-store-with-java-client">Using High-Density Memory Store with Java Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="otherclientsintro.html#other-client-and-language-implementations">Other Client and Language Implementations</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="cplusclient.html#c-client">C++ Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="csharpclient.html#net-client">.NET Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="pythonclient.html#python-client">Python Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="nodejsclient.html#nodejs-client">Node.js Client</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="scala.html#scala">Scala</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="restclient.html#rest-client">REST Client</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="restclient.html#rest-client-getpostdelete-examples">REST Client GET/POST/DELETE Examples</a>
+            
+        </li>
+    
+        <li>
+             <a href="restclient.html#checking-the-status-of-the-cluster-for-rest-client">Checking the Status of the Cluster for REST Client</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="memcacheclient.html#memcache-client">Memcache Client</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="memcacheclient.html#memcache-client-code-examples">Memcache Client Code Examples</a>
+            
+        </li>
+    
+        <li>
+             <a href="memcacheclient.html#unsupported-operations-for-memcache">Unsupported Operations for Memcache</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="serialization.html#serialization">Serialization</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="serializationinterfaces.html#serialization-interface-types">Serialization Interface Types</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="serializationcomparisontable.html#comparing-serialization-interfaces">Comparing Serialization Interfaces</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="serializable.html#implementing-java-serializable-and-externalizable">Implementing Java Serializable and Externalizable</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="serializable.html#implementing-java-externalizable">Implementing Java Externalizable</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="dataserialization.html#implementing-dataserializable">Implementing DataSerializable</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="dataserialization.html#identifieddataserializable">IdentifiedDataSerializable</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#implementing-portable-serialization">Implementing Portable Serialization</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="portableserialization.html#portable-serialization-example-code">Portable Serialization Example Code</a>
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#registering-the-portable-factory">Registering the Portable Factory</a>
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#versioning-for-portable-serialization">Versioning for Portable Serialization</a>
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#ordering-consistency-for-writeportable">Ordering Consistency for `writePortable`</a>
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#null-portable-serialization">Null Portable Serialization</a>
+            
+        </li>
+    
+        <li>
+             <a href="portableserialization.html#distributedobject-serialization">DistributedObject Serialization</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="customserialization.html#custom-serialization">Custom Serialization</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="customserialization.html#implementing-streamserializer">Implementing StreamSerializer</a>
+            
+        </li>
+    
+        <li>
+             <a href="bytearrayserializer.html#implementing-bytearrayserializer">Implementing ByteArraySerializer</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="globalserializer.html#global-serializer">Global Serializer</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="globalserializer.html#sample-global-serializer">Sample Global Serializer</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="hazelcastinstanceaware.html#implementing-hazelcastinstanceaware">Implementing HazelcastInstanceAware</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="serializationconfigurationwrapup.html#serialization-configuration-wrap-up">Serialization Configuration Wrap-Up</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="management.html#management">Management</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="management.html#getting-member-statistics">Getting Member Statistics</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="management.html#map-statistics">Map Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="management.html#multimap-statistics">Multimap Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="management.html#queue-statistics">Queue Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="management.html#topic-statistics">Topic Statistics</a>
+            
+        </li>
+    
+        <li>
+             <a href="management.html#executor-statistics">Executor Statistics</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="jmxapipermember.html#jmx-api-per-member">JMX API per Member</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="monitoringwithjmx.html#monitoring-with-jmx">Monitoring with JMX</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="monitoringwithjmx.html#mbean-naming-for-hazelcast-data-structures">MBean Naming for Hazelcast Data Structures</a>
+            
+        </li>
+    
+        <li>
+             <a href="monitoringwithjmx.html#connecting-to-jmx-agent">Connecting to JMX Agent</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clusterutilities.html#cluster-utilities">Cluster Utilities</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusterutilities.html#getting-member-events-and-member-sets">Getting Member Events and Member Sets</a>
+            
+        </li>
+    
+        <li>
+             <a href="managingclusterstate.html#managing-cluster-and-member-states">Managing Cluster and Member States</a>
+            
+        </li>
+    
+        <li>
+             <a href="clustershscript.html#using-the-script-clustersh">Using the Script cluster.sh</a>
+            
+        </li>
+    
+        <li>
+             <a href="restforclustermanagement.html#using-rest-api-for-cluster-management">Using REST API for Cluster Management</a>
+            
+        </li>
+    
+        <li>
+             <a href="litemember.html#enabling-lite-members">Enabling Lite Members</a>
+            
+        </li>
+    
+        <li>
+             <a href="memberattributes.html#defining-member-attributes">Defining Member Attributes</a>
+            
+        </li>
+    
+        <li>
+             <a href="clustermembersafetycheck.html#safety-checking-cluster-members">Safety Checking Cluster Members</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="diagnostics.html#diagnostics">Diagnostics</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="diagnostics.html#enabling-diagnostics-logging">Enabling Diagnostics Logging</a>
+            
+        </li>
+    
+        <li>
+             <a href="diagnostics.html#diagnostics-log-file">Diagnostics Log File</a>
+            
+        </li>
+    
+        <li>
+             <a href="diagnostics.html#diagnostics-plugins">Diagnostics Plugins</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="health.html#health-check-and-monitoring">Health Check and Monitoring</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="health.html#health-check">Health Check</a>
+            
+        </li>
+    
+        <li>
+             <a href="health.html#health-monitor">Health Monitor</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="managementcenter.html#management-center">Management Center</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clusteredjmx.html#clustered-jmx-via-management-center">Clustered JMX via Management Center</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusteredjmx.html#configuring-clustered-jmx">Configuring Clustered JMX</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredjmx.html#enabling-tlsssl-for-clustered-jmx">Enabling TLS/SSL for Clustered JMX</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredjmx.html#clustered-jmx-api">Clustered JMX API</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredjmx.html#integrating-with-new-relic">Integrating with New Relic</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredjmx.html#integrating-with-appdynamics">Integrating with AppDynamics</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#clustered-rest-via-management-center">Clustered REST via Management Center</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusteredrest.html#enabling-clustered-rest">Enabling Clustered REST</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#clustered-rest-api-root">Clustered REST API Root</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#clusters-resource">Clusters Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#cluster-resource">Cluster Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#members-resource">Members Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#member-resource">Member Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#clients-resource">Clients Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#maps-resource">Maps Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#multimaps-resource">MultiMaps Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#queues-resource">Queues Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#topics-resource">Topics Resource</a>
+            
+        </li>
+    
+        <li>
+             <a href="clusteredrest.html#executors-resource">Executors Resource</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="security.html#security">Security</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="security.html#enabling-jaas-security">Enabling JAAS Security</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="socketinterceptor.html#socket-interceptor">Socket Interceptor</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="securityinterceptor.html#security-interceptor">Security Interceptor</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="encryption.html#encryption">Encryption</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#tlsssl">TLS/SSL</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="ssl.html#tlsssl-for-hazelcast-members">TLS/SSL for Hazelcast Members</a>
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#tlsssl-for-hazelcast-clients">TLS/SSL for Hazelcast Clients</a>
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#mutual-authentication">Mutual Authentication</a>
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#tlsssl-performance-improvements-for-java">TLS/SSL Performance Improvements for Java</a>
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#tlsssl-debugging">TLS/SSL Debugging</a>
+            
+        </li>
+    
+        <li>
+             <a href="ssl.html#tlsssl-for-hazelcast-management-center">TLS/SSL for Hazelcast Management Center</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#integrating-openssl">Integrating OpenSSL</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="integratingopenssl.html#installing-openssl">Installing OpenSSL</a>
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#apache-portable-runtime-library">Apache Portable Runtime library</a>
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#netty-libraries">Netty Libraries</a>
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#configuring-hazelcast-for-openssl">Configuring Hazelcast for OpenSSL</a>
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#configuring-cipher-suites">Configuring Cipher Suites</a>
+            
+        </li>
+    
+        <li>
+             <a href="integratingopenssl.html#other-ways-of-configuring-properties">Other Ways of Configuring Properties</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="credentials.html#credentials">Credentials</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clusterloginmodule.html#clusterloginmodule">ClusterLoginModule</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="clusterloginmodule.html#enterprise-integration">Enterprise Integration</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="clustermembersecurity.html#cluster-member-security">Cluster Member Security</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="nativeclientsecurity.html#native-client-security">Native Client Security</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="nativeclientsecurity.html#authentication">Authentication</a>
+            
+        </li>
+    
+        <li>
+             <a href="nativeclientsecurity.html#authorization">Authorization</a>
+            
+        </li>
+    
+        <li>
+             <a href="nativeclientsecurity.html#permissions">Permissions</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="performance.html#performance">Performance</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="performance.html#data-affinity">Data Affinity</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="backpressure.html#back-pressure">Back Pressure</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="backpressure.html#member-side">Member Side</a>
+            
+        </li>
+    
+        <li>
+             <a href="backpressure.html#client-side">Client Side</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="threadingmodel.html#threading-model">Threading Model</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="threadingmodel.html#io-threading">I/O Threading</a>
+            
+        </li>
+    
+        <li>
+             <a href="threadingevent.html#event-threading">Event Threading</a>
+            
+        </li>
+    
+        <li>
+             <a href="threadingexecutor.html#iexecutor-threading">IExecutor Threading</a>
+            
+        </li>
+    
+        <li>
+             <a href="threadingoperation.html#operation-threading">Operation Threading</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="slowoperationdetector.html#slowoperationdetector">SlowOperationDetector</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="slowoperationdetector.html#logging-of-slow-operations">Logging of Slow Operations</a>
+            
+        </li>
+    
+        <li>
+             <a href="slowoperationdetector.html#purging-of-slow-operation-logs">Purging of Slow Operation Logs</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache">Near Cache</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="nearcache.html#hazelcast-data-structures-with-near-cache-support">Hazelcast Data Structures with Near Cache Support</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#configuring-near-cache">Configuring Near Cache</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-configuration-examples">Near Cache Configuration Examples</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-eviction">Near Cache Eviction</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-expiration">Near Cache Expiration</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-invalidation">Near Cache Invalidation</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-consistency">Near Cache Consistency</a>
+            
+        </li>
+    
+        <li>
+             <a href="nearcache.html#near-cache-preloader">Near Cache Preloader</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="simulator.html#hazelcast-simulator">Hazelcast Simulator</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="wan.html#wan">WAN</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="wan.html#wan-replication">WAN Replication</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="definingwanreplication.html#defining-wan-replication">Defining WAN Replication</a>
+            
+        </li>
+    
+        <li>
+             <a href="definingwanreplication.html#wanbatchreplication-implementation">WanBatchReplication Implementation</a>
+            
+        </li>
+    
+        <li>
+             <a href="configuringwanreplicationformapcache.html#configuring-wan-replication-for-imap-and-icache">Configuring WAN Replication for IMap and ICache</a>
+            
+        </li>
+    
+        <li>
+             <a href="batchsize.html#batch-size">Batch Size</a>
+            
+        </li>
+    
+        <li>
+             <a href="batchmaximumdelay.html#batch-maximum-delay">Batch Maximum Delay</a>
+            
+        </li>
+    
+        <li>
+             <a href="responsetimeout.html#response-timeout">Response Timeout</a>
+            
+        </li>
+    
+        <li>
+             <a href="queuecapacity.html#queue-capacity">Queue Capacity</a>
+            
+        </li>
+    
+        <li>
+             <a href="queuefullbehavior.html#queue-full-behavior">Queue Full Behavior</a>
+            
+        </li>
+    
+        <li>
+             <a href="eventfiltering.html#event-filtering-api">Event Filtering API</a>
+            
+        </li>
+    
+        <li>
+             <a href="acktypes.html#acknowledgment-types">Acknowledgment Types</a>
+            
+        </li>
+    
+        <li>
+             <a href="wansync.html#synchronizing-wan-target-cluster">Synchronizing WAN Target Cluster</a>
+            
+        </li>
+    
+        <li>
+             <a href="wanreplicationfailuredetectionandrecovery.html#wan-replication-failure-detection-and-recovery">WAN Replication Failure Detection and Recovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="wanreplicationfailuredetectionandrecovery.html#wan-endpoint-recovery">WAN Endpoint Recovery</a>
+            
+        </li>
+    
+        <li>
+             <a href="wanreplicationadditionalinfo.html#wan-replication-additional-information">WAN Replication Additional Information</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="solaceintegration.html#hazelcast-wan-replication-with-solace">Hazelcast WAN Replication with Solace</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="solaceintegration.html#enabling-integration">Enabling Integration</a>
+            
+        </li>
+    
+        <li>
+             <a href="solaceintegration.html#additional-information">Additional Information</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#osgi">OSGI</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="osgi.html#osgi-support">OSGI Support</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#api">API</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#configuring-hazelcast-osgi-support">Configuring Hazelcast OSGI Support</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#design">Design</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#using-hazelcast-osgi-service">Using Hazelcast OSGI Service</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="osgi.html#getting-hazelcast-osgi-service-instances">Getting Hazelcast OSGI Service Instances</a>
+            
+        </li>
+    
+        <li>
+             <a href="osgi.html#managing-and-using-hazelcast-instances">Managing and Using Hazelcast instances</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="extendinghazelcast.html#extending-hazelcast">Extending Hazelcast</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="userdefinedservices.html#user-defined-services">User Defined Services</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="spicreateclass.html#creating-the-service-class">Creating the Service Class</a>
+            
+        </li>
+    
+        <li>
+             <a href="spienableclass.html#enabling-the-service-class">Enabling the Service Class</a>
+            
+        </li>
+    
+        <li>
+             <a href="spiaddproperties.html#adding-properties-to-the-service">Adding Properties to the Service</a>
+            
+        </li>
+    
+        <li>
+             <a href="spistartservice.html#starting-the-service">Starting the Service</a>
+            
+        </li>
+    
+        <li>
+             <a href="spiproxy.html#placing-a-remote-call-via-proxy">Placing a Remote Call via Proxy</a>
+            
+        </li>
+    
+        <li>
+             <a href="spicreatecontainer.html#creating-containers">Creating Containers</a>
+            
+        </li>
+    
+        <li>
+             <a href="spipartitionmigration.html#partition-migration">Partition Migration</a>
+            
+        </li>
+    
+        <li>
+             <a href="spicreatebackups.html#creating-backups">Creating Backups</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="spioperationparker.html#operationparker">OperationParker</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="discoveryspi.html#discovery-spi">Discovery SPI</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="discoveryoverview.html#discovery-spi-interfaces-and-classes">Discovery SPI Interfaces and Classes</a>
+            
+        </li>
+    
+        <li>
+             <a href="discoverystrategy.html#discovery-strategy">Discovery Strategy</a>
+            
+        </li>
+    
+        <li>
+             <a href="discoveryintegration.html#discoveryservice-framework-integration">DiscoveryService (Framework integration)</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="config-properties.html#config-properties-spi">Config Properties SPI</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="config-properties.html#config-properties-spi-classes">Config Properties SPI Classes</a>
+            
+        </li>
+    
+        <li>
+             <a href="config-properties.html#config-properties-spi-example">Config Properties SPI Example</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#consistency-and-replication-model">Consistency and Replication Model</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#a-brief-overview-of-consistency-and-replication-in-distributed-systems">A Brief Overview of Consistency and Replication in Distributed Systems</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#hazelcasts-replication-algorithm">Hazelcast's Replication Algorithm</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#best-effort-consistency">Best-Effort Consistency</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#invocation-lifecycle">Invocation Lifecycle</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#exactly-once-at-least-once-or-at-most-once-execution">Exactly-once, At-least-once or At-most-once Execution</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="consistencyandreplicationmodel.html#indeterminateoperationstateexception">IndeterminateOperationStateException</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="networkpartitioning.html#network-partitioning">Network Partitioning</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="networkpartitioning.html#split-brain-syndrome">Split-Brain Syndrome</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="networkpartitioning.html#dealing-with-network-partitions">Dealing with Network Partitions</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainprotection.html#split-brain-protection">Split-Brain Protection</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="splitbrainprotection.html#time-window-for-split-brain-protection">Time Window for Split-Brain Protection</a>
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainprotection.html#configuring-split-brain-protection">Configuring Split-Brain Protection</a>
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainprotection.html#configuring-quorum-listeners">Configuring Quorum Listeners</a>
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainprotection.html#querying-quorum-results">Querying Quorum Results</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainrecovery.html#split-brain-recovery">Split-Brain Recovery</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="splitbrainrecovery.html#merge-policies">Merge Policies</a>
+            
+        </li>
+    
+        <li>
+             <a href="splitbrainrecovery.html#specifying-merge-policies">Specifying Merge Policies</a>
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="systemproperties-member.html#system-properties">System Properties</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="commonexceptiontypes.html#common-exception-types">Common Exception Types</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="licenses.html#license-questions">License Questions</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="licenses.html#embedded-dependencies">Embedded Dependencies</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="licenses.html#runtime-dependencies">Runtime Dependencies</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#frequently-asked-questions">Frequently Asked Questions</a>
+            
+                
+    <ol>
+    
+        <li>
+             <a href="faq.html#why-271-as-the-default-partition-count">Why 271 as the default partition count?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#is-hazelcast-thread-safe">Is Hazelcast thread safe?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-members-discover-each-other">How do members discover each other?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#what-happens-when-a-member-goes-down">What happens when a member goes down?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-i-test-the-connectivity">How do I test the connectivity?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-i-choose-keys-properly">How do I choose keys properly?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-i-reflect-value-modifications">How do I reflect value modifications?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-i-test-my-hazelcast-cluster">How do I test my Hazelcast cluster?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#does-hazelcast-support-hundreds-of-members">Does Hazelcast support hundreds of members?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#does-hazelcast-support-thousands-of-clients">Does Hazelcast support thousands of clients?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#difference-between-lite-member-and-smart-client">Difference between Lite Member and Smart Client?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-you-give-support">How do you give support?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#does-hazelcast-persist">Does Hazelcast persist?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#can-i-use-hazelcast-in-a-single-server">Can I use Hazelcast in a single server?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-can-i-monitor-hazelcast">How can I monitor Hazelcast?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-can-i-see-debug-level-logs">How can I see debug level logs?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#client-server-vs-embedded-topologies">Client-server vs. embedded topologies?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-do-i-know-it-is-safe-to-kill-the-second-member">How do I know it is safe to kill the second member?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#when-do-i-need-native-memory-solutions">When do I need Native Memory solutions?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#is-there-any-disadvantage-of-using-near-cache">Is there any disadvantage of using near-cache?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#is-hazelcast-secure">Is Hazelcast secure?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#how-can-i-set-socket-options">How can I set socket options?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#client-disconnections-during-idle-time">Client disconnections during idle time?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#oome-unable-to-create-new-native-thread">OOME: Unable to create new native thread?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#does-repartitioning-wait-for-entry-processor">Does repartitioning wait for Entry Processor?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#instances-on-different-machines-cannot-see-each-other">Instances on different machines cannot see each other?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="faq.html#what-does-replica-1-has-no-owner-mean">What Does &quot;Replica: 1 has no owner&quot; Mean?</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+            
+        </li>
+    
+        <li>
+             <a href="glossary.html#glossary">Glossary</a>
+            
+                
+    <ol>
+    
+</ol>
+
+            
+        </li>
+    
+</ol>
+
+	    </nav>
+	    
+	    <nav id="links">
+	        <ul>
+	            
+	        </ul>
+	    </nav>
+	    	
+	</div>
+
+	        <div id="content">
+	            <a name="indexing-queries"></a><h3 id="indexing-queries">Indexing Queries</h3>
+<p>Hazelcast distributed queries will run on each member in parallel and will return only the results to the caller.
+Then, on the caller side, the results will be merged.</p>
+<p>When a query runs on a
+member, Hazelcast will iterate through all the owned entries and find the matching ones. This can be made faster by indexing
+the mostly queried fields, just like you would do for your database. Indexing will add overhead for each <code>write</code>
+operation but queries will be a lot faster. If you query your map a lot, make sure to add indexes for the most frequently
+queried fields. For example, if you do an <code>active and age &lt; 30</code> query, make sure you add an index for the <code>active</code> and
+<code>age</code> fields. The following example code does that by:</p>
+<ul>
+<li>getting the map from the Hazelcast instance, and</li>
+<li>adding indexes to the map with the IMap <code>addIndex</code> method.</li>
+</ul>
+<pre><code class="lang-java">IMap map = hazelcastInstance.getMap( &quot;employees&quot; );
+// ordered, since we have ranged queries for this field
+map.addIndex( &quot;age&quot;, true );
+// not ordered, because boolean field cannot have range
+map.addIndex( &quot;active&quot;, false );
+</code></pre>
+<a name="indexing-ranged-queries"></a><h4 id="indexing-ranged-queries">Indexing Ranged Queries</h4>
+<p><code>IMap.addIndex(fieldName, ordered)</code> is used for adding index. For each indexed field, if you have ranged queries such as <code>age&gt;30</code>,
+<code>age BETWEEN 40 AND 60</code>, then you should set the <code>ordered</code> parameter to <code>true</code>. Otherwise, set it to <code>false</code>.</p>
+<a name="configuring-imap-indexes"></a><h4 id="configuring-imap-indexes">Configuring IMap Indexes</h4>
+<p>Also, you can define <code>IMap</code> indexes in configuration. An example is shown below.</p>
+<pre><code class="lang-xml">&lt;map name=&quot;default&quot;&gt;
+  ...
+  &lt;indexes&gt;
+    &lt;index ordered=&quot;false&quot;&gt;name&lt;/index&gt;
+    &lt;index ordered=&quot;true&quot;&gt;age&lt;/index&gt;
+  &lt;/indexes&gt;
+&lt;/map&gt;
+</code></pre>
+<p>You can also define <code>IMap</code> indexes using programmatic configuration, as in the example below.</p>
+<pre><code class="lang-java">mapConfig.addMapIndexConfig( new MapIndexConfig( &quot;name&quot;, false ) );
+mapConfig.addMapIndexConfig( new MapIndexConfig( &quot;age&quot;, true ) );
+</code></pre>
+<p>The following is the Spring declarative configuration for the same sample.</p>
+<pre><code class="lang-xml">&lt;hz:map name=&quot;default&quot;&gt;
+  &lt;hz:indexes&gt;
+    &lt;hz:index attribute=&quot;name&quot;/&gt;
+    &lt;hz:index attribute=&quot;age&quot; ordered=&quot;true&quot;/&gt;
+  &lt;/hz:indexes&gt;
+&lt;/hz:map&gt;
+</code></pre>
+<p><br></br>
+<img src="images/NoteSmall.jpg" alt="image"> <strong><em>NOTE:</em></strong> <em>Non-primitive types to be indexed should implement </em><code>Comparable</code><em>.</em></p>
+<p><br></br>
+<img src="images/NoteSmall.jpg" alt="image"> <strong><em>NOTE:</em></strong> <em>Starting with Hazelcast 3.9, if you configure the data structure to use <a href="#configuring-high-density-memory-store">High-Density Memory Store</a> **</em>and<em>** indexes, the indexes are automatically stored in the High-Density Memory Store as well. This prevents from running into full GCs, when doing a lot of updates to index.</em></p>
+<a name="indexing-attributes-with-valueextractor"></a><h4 id="indexing-attributes-with-valueextractor">Indexing Attributes with ValueExtractor</h4>
+<p>You can also define custom attributes that may be referenced in predicates, queries and indexes. Custom attributes can be defined by implementing a <code>ValueExtractor</code>. Please see the <a href="#indexing-custom-attributes">Indexing Custom Attributes section</a> for details.</p>
+
+
+
+
+	        </div>
+	        </div>			
+    </div>
+</body>
+</html>
