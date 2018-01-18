@@ -1,0 +1,15 @@
+<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.9.xsd"
+                  xmlns="http://www.hazelcast.com/schema/client-config"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <network>
+    <cluster-members>
+      <!-- Configure the configuration to be made to localhost only -->
+
+      
+    </cluster-members>
+  </network>
+
+  <!-- Import license key configuration -->
+  <import resource="client-license-key.xml" />
+</hazelcast-client>

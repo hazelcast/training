@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.9.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <network>
+    <join>
+      <!-- Deactivate multicast discovery which is enabled by default -->
+
+
+      <!-- Configure the node to be bound to localhost only -->
+
+
+    </join>
+  </network>
+
+  <!-- Import license key configuration -->
+  <import resource="member-license-key.xml" />
+</hazelcast>
