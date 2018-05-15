@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.9.xsd"
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.10.xsd"
            xmlns="http://www.hazelcast.com/schema/config"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
@@ -8,7 +8,7 @@
       <!-- For trainings everyone should create his/her own cluster, therefore
       multicast is disabled and other nodes are only searched for on localhost -->
       <multicast enabled="false"/>
-      <tcp-ip>
+      <tcp-ip enabled="true">
         <interface>127.0.0.1</interface>
       </tcp-ip>
     </join>
@@ -17,13 +17,8 @@
   <!-- Configure statistics to be sent to Management Center -->
   <management-center enabled="true">http://localhost:8080/mancenter</management-center>
 
-  <!-- Import license key configuration -->
-  <import resource="member-license-key.xml" />
 
   <map name="training">
-    <map-store enabled="true">
-      <class-name>com.hazelcast.DummyMapStore</class-name>
-    </map-store>
 
     <!-- Configure eviction for 5 elements per member -->
 

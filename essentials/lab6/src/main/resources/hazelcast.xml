@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.9.xsd"
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.10.xsd"
            xmlns="http://www.hazelcast.com/schema/config"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
@@ -17,6 +17,4 @@
   <!-- Configure statistics to be sent to Management Center -->
   <management-center enabled="true">http://localhost:8080/mancenter</management-center>
 
-  <!-- Import license key configuration -->
-  <import resource="member-license-key.xml" />
 </hazelcast>

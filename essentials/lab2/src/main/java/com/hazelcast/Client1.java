@@ -8,7 +8,7 @@ public class Client1 {
 
 
         // Create a Hazelcast backed map
-        Map<Integer, String> map = ;
+        Map<Integer, String> map = null; //remove null
 
         // Write the 1000 elements to the map
         for (int i = 0; i < 1000; i++) {

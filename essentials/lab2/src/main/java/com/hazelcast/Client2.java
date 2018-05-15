@@ -1,5 +1,6 @@
 package com.hazelcast;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Client2 {
@@ -7,8 +8,8 @@ public class Client2 {
         // Create Hazelcast instance which is backed by a client
 
 
-        // Create a Hazelcast backed map
-        Map<Integer, String> map = ;
+        // Change the initialization and create a Hazelcast backed map
+        Map<Integer, String> map = new HashMap();
 
         // Get key 42 from the map and store the value
         String result = map.get(42);

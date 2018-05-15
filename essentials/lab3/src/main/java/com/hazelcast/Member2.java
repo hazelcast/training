@@ -12,7 +12,7 @@ public class Member2 {
 
 
         // Get key 42 from the map and store the value
-        String result = ;
+        String result = null;//remove null
 
         // Print the result to the console
         System.out.println(result);

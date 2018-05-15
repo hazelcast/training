@@ -17,11 +17,11 @@
   <dependencies>
     <dependency>
       <groupId>com.hazelcast</groupId>
-      <artifactId>hazelcast-enterprise</artifactId>
+      <artifactId>hazelcast</artifactId>
     </dependency>
     <dependency>
       <groupId>com.hazelcast</groupId>
-      <artifactId>hazelcast-enterprise-client</artifactId>
+      <artifactId>hazelcast-client</artifactId>
     </dependency>
   </dependencies>
 </project>
