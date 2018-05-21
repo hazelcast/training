@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.10.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <network>
+    <join>
+      <!-- For trainings everyone should create his/her own cluster, therefore
+      multicast is disabled and other nodes are only searched for on localhost -->
+      <multicast enabled="false"/>
+      <tcp-ip enabled="true">
+        <interface>127.0.0.1</interface>
+      </tcp-ip>
+    </join>
+  </network>
+</hazelcast>
