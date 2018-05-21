@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.hazelcast</groupId>
-  <artifactId>lab2</artifactId>
+  <artifactId>lab8</artifactId>
   <version>1.0</version>
 
   <parent>
-    <artifactId>essentials-training-parent</artifactId>
+    <artifactId>hazelcast-advanced-training-parent</artifactId>
     <groupId>com.hazelcast</groupId>
     <version>1.0</version>
   </parent>
@@ -19,7 +19,9 @@
       <groupId>com.hazelcast</groupId>
       <artifactId>hazelcast</artifactId>
     </dependency>
-    <!-- Add the Hazelcast client dependency -->
-
+    <dependency>
+      <groupId>com.hazelcast</groupId>
+      <artifactId>hazelcast-client</artifactId>
+    </dependency>
   </dependencies>
 </project>
