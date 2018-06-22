@@ -15,6 +15,6 @@
   </network>
 
   <!-- Configure statistics to be sent to Management Center -->
-  <management-center enabled="true">http://localhost:8080/mancenter</management-center>
+  <management-center enabled="true">http://localhost:8080/hazelcast-mancenter</management-center>
 
 </hazelcast>
