@@ -20,10 +20,13 @@
     <module>lab8</module>
     <module>lab9</module>
     <module>lab10</module>
+    <module>lab11</module>
+    <module>lab12</module>
+    <module>lab14</module>
   </modules>
 
   <properties>
-    <hazelcast.version>3.10</hazelcast.version>
+    <hazelcast.version>3.11</hazelcast.version>
   </properties>
 
   <build>

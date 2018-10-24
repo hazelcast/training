@@ -5,6 +5,7 @@ com.hazelcast.buildutils
 com.hazelcast.cache
 com.hazelcast.cache.impl
 com.hazelcast.cache.impl.event
+com.hazelcast.cache.impl.eviction
 com.hazelcast.cache.impl.journal
 com.hazelcast.cache.impl.maxsize
 com.hazelcast.cache.impl.maxsize.impl
@@ -29,6 +30,7 @@ com.hazelcast.client.connection.nio
 com.hazelcast.client.console
 com.hazelcast.client.impl
 com.hazelcast.client.impl.client
+com.hazelcast.client.impl.clientside
 com.hazelcast.client.impl.operations
 com.hazelcast.client.impl.protocol
 com.hazelcast.client.impl.protocol.exception
@@ -39,6 +41,7 @@ com.hazelcast.client.impl.protocol.task.cache
 com.hazelcast.client.impl.protocol.task.cardinality
 com.hazelcast.client.impl.protocol.task.condition
 com.hazelcast.client.impl.protocol.task.countdownlatch
+com.hazelcast.client.impl.protocol.task.crdt.pncounter
 com.hazelcast.client.impl.protocol.task.dynamicconfig
 com.hazelcast.client.impl.protocol.task.executorservice
 com.hazelcast.client.impl.protocol.task.executorservice.durable
@@ -108,14 +111,22 @@ com.hazelcast.concurrent.semaphore.operations
 com.hazelcast.config
 com.hazelcast.config.matcher
 com.hazelcast.config.properties
+com.hazelcast.config.replacer
+com.hazelcast.config.replacer.spi
 com.hazelcast.console
 com.hazelcast.core
 com.hazelcast.core.server
+com.hazelcast.crdt
+com.hazelcast.crdt.pncounter
+com.hazelcast.crdt.pncounter.operations
 com.hazelcast.durableexecutor
 com.hazelcast.durableexecutor.impl
 com.hazelcast.durableexecutor.impl.operations
 com.hazelcast.executor.impl
 com.hazelcast.executor.impl.operations
+com.hazelcast.flakeidgen
+com.hazelcast.flakeidgen.impl
+com.hazelcast.flakeidgen.impl.client
 com.hazelcast.hotrestart
 com.hazelcast.instance
 com.hazelcast.internal
@@ -130,6 +141,7 @@ com.hazelcast.internal.cluster.impl.operations
 com.hazelcast.internal.config
 com.hazelcast.internal.diagnostics
 com.hazelcast.internal.dynamicconfig
+com.hazelcast.internal.dynamicconfig.search
 com.hazelcast.internal.eviction
 com.hazelcast.internal.eviction.impl
 com.hazelcast.internal.eviction.impl.comparator
@@ -138,8 +150,11 @@ com.hazelcast.internal.eviction.impl.strategy
 com.hazelcast.internal.eviction.impl.strategy.sampling
 com.hazelcast.internal.jmx
 com.hazelcast.internal.jmx.suppliers
+com.hazelcast.internal.journal
+com.hazelcast.internal.json
 com.hazelcast.internal.management
 com.hazelcast.internal.management.dto
+com.hazelcast.internal.management.events
 com.hazelcast.internal.management.operation
 com.hazelcast.internal.management.request
 com.hazelcast.internal.memory
@@ -158,7 +173,6 @@ com.hazelcast.internal.nearcache.impl.store
 com.hazelcast.internal.networking
 com.hazelcast.internal.networking.nio
 com.hazelcast.internal.networking.nio.iobalancer
-com.hazelcast.internal.networking.spinning
 com.hazelcast.internal.partition
 com.hazelcast.internal.partition.impl
 com.hazelcast.internal.partition.operation
@@ -171,6 +185,7 @@ com.hazelcast.internal.usercodedeployment.impl.filter
 com.hazelcast.internal.usercodedeployment.impl.operation
 com.hazelcast.internal.util
 com.hazelcast.internal.util.collection
+com.hazelcast.internal.util.comparators
 com.hazelcast.internal.util.concurrent
 com.hazelcast.internal.util.counters
 com.hazelcast.internal.util.filter
@@ -179,7 +194,6 @@ com.hazelcast.internal.util.hashslot
 com.hazelcast.internal.util.hashslot.impl
 com.hazelcast.internal.util.iterator
 com.hazelcast.internal.util.sort
-com.hazelcast.journal
 com.hazelcast.logging
 com.hazelcast.map
 com.hazelcast.map.eviction
@@ -247,7 +261,6 @@ com.hazelcast.query.impl.getters
 com.hazelcast.query.impl.predicates
 com.hazelcast.quorum
 com.hazelcast.quorum.impl
-com.hazelcast.quorum.impl.operation
 com.hazelcast.replicatedmap
 com.hazelcast.replicatedmap.impl
 com.hazelcast.replicatedmap.impl.client
@@ -277,6 +290,7 @@ com.hazelcast.spi.impl.eventservice.impl
 com.hazelcast.spi.impl.eventservice.impl.operations
 com.hazelcast.spi.impl.executionservice
 com.hazelcast.spi.impl.executionservice.impl
+com.hazelcast.spi.impl.merge
 com.hazelcast.spi.impl.operationexecutor
 com.hazelcast.spi.impl.operationexecutor.impl
 com.hazelcast.spi.impl.operationexecutor.slowoperationdetector
@@ -284,7 +298,6 @@ com.hazelcast.spi.impl.operationparker
 com.hazelcast.spi.impl.operationparker.impl
 com.hazelcast.spi.impl.operationservice
 com.hazelcast.spi.impl.operationservice.impl
-com.hazelcast.spi.impl.operationservice.impl.batching
 com.hazelcast.spi.impl.operationservice.impl.operations
 com.hazelcast.spi.impl.operationservice.impl.responses
 com.hazelcast.spi.impl.operationutil
@@ -294,6 +307,7 @@ com.hazelcast.spi.impl.proxyservice.impl.operations
 com.hazelcast.spi.impl.sequence
 com.hazelcast.spi.impl.servicemanager
 com.hazelcast.spi.impl.servicemanager.impl
+com.hazelcast.spi.merge
 com.hazelcast.spi.partition
 com.hazelcast.spi.partitiongroup
 com.hazelcast.spi.properties
@@ -320,3 +334,4 @@ com.hazelcast.util.scheduler
 com.hazelcast.version
 com.hazelcast.wan
 com.hazelcast.wan.impl
+com.hazelcast.wan.merkletree
