@@ -8,7 +8,7 @@
       <!-- For trainings everyone should create his/her own cluster, therefore
       multicast is disabled and other nodes are only searched for on localhost -->
       <multicast enabled="false"/>
-      <tcp-ip>
+      <tcp-ip enabled="true">
         <interface>127.0.0.1</interface>
       </tcp-ip>
     </join>
