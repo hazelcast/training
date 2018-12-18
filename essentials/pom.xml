@@ -20,7 +20,7 @@
   </modules>
 
   <properties>
-    <hazelcast.version>3.11</hazelcast.version>
+    <hazelcast.version>3.11.1</hazelcast.version>
   </properties>
 
   <build>
