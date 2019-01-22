@@ -97,7 +97,7 @@
 		</repository>
 		<repository>
 			<id>Hazelcast Private Release Repository</id>
-			<url>https://repository-hazelcast-l337.forge.cloudbees.com/release/</url>
+			<url>https://repository.hazelcast.com/release/</url>
 		</repository>
 	</repositories>
 

@@ -21,7 +21,7 @@ repositories {
 
     // Hazelcast Enterprise jars repository
     maven {
-        url 'https://repository-hazelcast-l337.forge.cloudbees.com/release/'
+        url 'https://repository.hazelcast.com/release/'
     }
 }
 
