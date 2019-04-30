@@ -20,7 +20,7 @@
   </modules>
 
   <properties>
-    <hazelcast.version>3.11.1</hazelcast.version>
+    <hazelcast.version>3.12</hazelcast.version>
   </properties>
 
   <build>
@@ -52,14 +52,4 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>Hazelcast Private Snapshot Repository</id>
-      <url>https://repository.hazelcast.com/snapshot/</url>
-    </repository>
-    <repository>
-      <id>Hazelcast Private Release Repository</id>
-      <url>https://repository.hazelcast.com/release/</url>
-    </repository>
-  </repositories>
 </project>
