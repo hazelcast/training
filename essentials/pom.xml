@@ -49,7 +49,20 @@
         <artifactId>hazelcast-client</artifactId>
         <version>${hazelcast.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.hazelcast</groupId>
+        <artifactId>hazelcast-enterprise</artifactId>
+        <version>${hazelcast.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <!-- For hazelcast-enterprise.jar, if you wish to use it -->
+  <repositories>
+    <repository>
+      <id>Hazelcast Private Release Repository</id>
+      <url>https://repository.hazelcast.com/release/</url>
+   </repository>
+  </repositories>
 
 </project>
