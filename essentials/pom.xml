@@ -17,10 +17,12 @@
     <module>lab5</module>
     <module>lab6</module>
     <module>lab7</module>
+    <module>cloud-lab</module>
+    <module>jet-lab</module>
   </modules>
 
   <properties>
-    <hazelcast.version>3.12</hazelcast.version>
+    <hazelcast.version>4.0.2</hazelcast.version>
   </properties>
 
   <build>
