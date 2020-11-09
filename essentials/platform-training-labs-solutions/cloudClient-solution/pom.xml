@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.hazelcast.platform.training</groupId>
+    <artifactId>platform-training-labs-solutions</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>cloudClient-solution</artifactId>
+  <description>Demonstrate java client using IMDG cloud service </description>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+	
+  <repositories>
+       <repository>
+    		<id>Hazelcast Private Snapshot Repository</id>
+    		<url>https://repository.hazelcast.com/snapshot/</url>
+		</repository>
+		<repository>
+    		<id>Hazelcast Private Release Repository</id>
+    		<url>https://repository.hazelcast.com/release/</url>
+		</repository>
+ </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-enterprise-client</artifactId>
+            <version>3.12.8</version>
+        </dependency>
+    </dependencies>
+</project>
