@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hazelcast.platform.training</groupId>
+  <artifactId>platform-training-labs-solutions</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>platform-training-labs-solutions</name>
+  <description>Solutions to platform training labs</description>
+  <modules>
+  	<module>cloudClient-solution</module>
+  	<module>imdgCluster-solution</module>
+  	<module>jetEngine-solution</module>
+  </modules>
+</project>
