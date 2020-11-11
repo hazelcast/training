@@ -2,7 +2,7 @@ package com.hazelcast.platform.training.cloud.client;
 
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IMap;
+import com.hazelcast.map.IMap;
 
 /**
  * Cloud IMDG Exercise 1 - Simply putting entries into hosted IMDG cloud service
