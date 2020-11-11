@@ -2,7 +2,10 @@ package com.hazelcast.platform.training.cloud.client;
 
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.core.IQueue;
+import com.hazelcast.client.config.ClientConfig;
+import com.hazelcast.collection.IQueue;
+
+
 
 /**
  * Cloud IMDG Exercise 2 - Messaging - sending & consuming messages using IMDG cloud service queue
