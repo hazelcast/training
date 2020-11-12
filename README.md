@@ -1,7 +1,9 @@
 # Hazelcast Platform Training
 
 [Hazelcast IMDG](https://hazelcast.org/imdg/)
+
 [Hazelcast Jet](https://jet-start.sh/)
+
 [Hazelcast Cloud](https://cloud.hazelcast.com/sign-up)
 
 
