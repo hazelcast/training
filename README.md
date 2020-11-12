@@ -1,6 +1,6 @@
 # IMDG Training
 
-[Hazelcast IMDG](http://imdg.hazelcast.org)
+[Hazelcast IMDG](https://hazelcast.org/imdg/)
 
 This repository contains the code used to accompany Hazelcast's instructor-led classroom based
 training sessions.
