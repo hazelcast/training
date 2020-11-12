@@ -1,6 +1,11 @@
-# IMDG Training
+# Hazelcast Platform Training
 
-[Hazelcast IMDG](http://imdg.hazelcast.org)
+[Hazelcast IMDG](https://hazelcast.org/imdg/)
+
+[Hazelcast Jet](https://jet-start.sh/)
+
+[Hazelcast Cloud](https://cloud.hazelcast.com/sign-up)
+
 
 This repository contains the code used to accompany Hazelcast's instructor-led classroom based
 training sessions.
