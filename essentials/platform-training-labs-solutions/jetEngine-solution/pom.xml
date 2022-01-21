@@ -25,7 +25,7 @@
      <dependency>
         <groupId>com.hazelcast.jet</groupId>
         <artifactId>hazelcast-jet</artifactId>
-        <version>4.3</version>
+        <version>4.5.3</version>
       </dependency>
   </dependencies>
 </project>
